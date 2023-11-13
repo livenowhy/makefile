@@ -7,4 +7,3 @@ RUN chmod -R a+wr /etc/redis/redis.conf
 CMD [ "redis-server", "/etc/redis/redis.conf" ]
 
 
-# 已配置自动构建

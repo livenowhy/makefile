@@ -8,4 +8,3 @@ ADD mysqld.cnf /etc/mysql/mysql.conf.d/mysqld.cnf
 ADD docker-entrypoint.sh /entrypoint.sh
 RUN chmod u+x /entrypoint.sh 
 
-# 已配置自动构建

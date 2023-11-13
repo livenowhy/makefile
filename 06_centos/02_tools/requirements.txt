@@ -1,0 +1,11 @@
+Django==3.2.1
+mysqlclient==2.1.1
+loguru==0.6.0
+celery==5.1.2
+django-redis==5.2.0
+flower==1.2.0
+requests
+djangorestframework==3.14.0
+aliyun-python-sdk-core==2.13.36
+aliyun-python-sdk-vpc==3.0.25
+aliyun-python-sdk-dyvmsapi==3.2.0

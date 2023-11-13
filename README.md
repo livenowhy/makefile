@@ -38,3 +38,34 @@
   `02_6.0.base` 基于 redis 6.0 进行优化配置的镜像
 
     registry.cn-beijing.aliyuncs.com/livenowhy/redis:6.0.base
+
+### 04_mongo
+
+  `01_6.0.1` 官方 mongo 6.0.1
+
+    registry.cn-beijing.aliyuncs.com/livenowhy/mongo:6.0.1
+
+  `02_mongo-express` 官方 mongo-express
+
+    registry.cn-beijing.aliyuncs.com/livenowhy/mongo-express:1.0.0-alpha.4
+
+### 05_rabbitmq
+
+  `01_3.8` 官方 rabbitmq 3.8
+
+    registry.cn-beijing.aliyuncs.com/livenowhy/rabbitmq:3.8
+
+  `02_rabbitmq_management` 官方 rabbitmq 3.8 management
+
+    registry.cn-beijing.aliyuncs.com/livenowhy/rabbitmq:3.8-management
+
+
+### 06_centos
+
+  `01_7.6` centos 7.6 
+    
+    registry.cn-beijing.aliyuncs.com/livenowhy/centos:7.6
+
+  `02_tools` 基于 centos 7.6 配置的开放环境(集成各种工具)
+
+    registry.cn-beijing.aliyuncs.com/livenowhy/centos:tools

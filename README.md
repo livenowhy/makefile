@@ -69,3 +69,26 @@
   `02_tools` 基于 centos 7.6 配置的开放环境(集成各种工具)
 
     registry.cn-beijing.aliyuncs.com/livenowhy/centos:tools
+
+### 07_python
+
+  `01_latest`: python latest 官方镜像
+
+    registry.cn-beijing.aliyuncs.com/livenowhy/python:latest
+
+  `02_base`:   基于 latest 配置了基础环境的镜像
+
+    registry.cn-beijing.aliyuncs.com/livenowhy/python:base
+
+  `03_ethnic`: 基于 base 配置 的 ethnic 镜像
+
+    registry.cn-beijing.aliyuncs.com/livenowhy/python:ethnic
+
+  `04_temporalio`: 基于 base 配置的 temporalio 镜像
+    
+    registry.cn-beijing.aliyuncs.com/livenowhy/python:temporalio
+
+  `05_3.6-alpine`  python:3.6-alpine
+    
+    registry.cn-beijing.aliyuncs.com/livenowhy/python:3.6-alpine
+

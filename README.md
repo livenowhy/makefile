@@ -28,3 +28,13 @@
   `03_8.0` 官方 mysql 8.0
 
     registry.cn-beijing.aliyuncs.com/livenowhy/mysql:8.0
+
+### 03_redis
+
+  `01_6.0` 官方 redis 6.0
+
+    registry.cn-beijing.aliyuncs.com/livenowhy/redis:6.0
+
+  `02_6.0.base` 基于 redis 6.0 进行优化配置的镜像
+
+    registry.cn-beijing.aliyuncs.com/livenowhy/redis:6.0.base

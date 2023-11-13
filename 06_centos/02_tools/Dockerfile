@@ -40,3 +40,5 @@ COPY ./requirements.txt /home/
 RUN pip install -r /home/requirements.txt && rm -rf /home/*
 
 # RUN pip install requests -i https://pypi.mirrors.ustc.edu.cn/simple/
+
+# 已配置自动构建

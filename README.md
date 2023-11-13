@@ -100,7 +100,7 @@
     registry.cn-beijing.aliyuncs.com/livenowhy/python:3.6-alpine-base
 
   `07_3.8` python:3.8
-  
+
     registry.cn-beijing.aliyuncs.com/livenowhy/python:3.8
 
 
@@ -123,7 +123,14 @@
 
   `02_19.0.0` 官方 nodejs 19.0.0-alpine3.15
 
-  `02_gitbook` 基于 nodejs 的 gitbook 镜像
+  `03_latest`
+
+  `04_10.22.0-buster-slim`
+
+  `05_gitbook`
+
+  `06_lts-alpine3.18`
+  
 
 ### 10_k8s
 

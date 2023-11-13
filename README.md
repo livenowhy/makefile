@@ -95,6 +95,14 @@
     
     registry.cn-beijing.aliyuncs.com/livenowhy/python:3.6-alpine
 
+  `06_3.6-alpine-base`  基于 3.6-alpine 配置的 python 镜像
+    
+    registry.cn-beijing.aliyuncs.com/livenowhy/python:3.6-alpine-base
+
+  `07_3.8` python:3.8
+  
+    registry.cn-beijing.aliyuncs.com/livenowhy/python:3.8
+
 
 ### 08_nas
 

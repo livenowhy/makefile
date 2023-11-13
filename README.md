@@ -92,3 +92,70 @@
     
     registry.cn-beijing.aliyuncs.com/livenowhy/python:3.6-alpine
 
+
+
+
+### 08_nas
+
+  `01_calibre` 优化官方 calibre-web
+
+    registry.cn-beijing.aliyuncs.com/livenowhy/calibre-web:latest
+
+  `02_certbot` 免费证书
+    
+    registry.cn-beijing.aliyuncs.com/livenowhy/certbot:latest
+
+
+### 09_node
+
+  `01_14.3.0`  官方 nodejs alpine3.10
+
+    registry.cn-beijing.aliyuncs.com/livenowhy/node:14.3.0-alpine3.10
+
+  `02_19.0.0` 官方 nodejs 19.0.0-alpine3.15
+
+  `02_gitbook` 基于 nodejs 的 gitbook 镜像
+
+### 10_k8s
+
+  `01_alertmanager` 官方 alertmanager:v0.15.3
+
+    registry.cn-beijing.aliyuncs.com/livenowhy/alertmanager:v0.15.3
+
+  `02_remote_storage_adapter` 官方 remote_storage_adapter
+
+    registry.cn-beijing.aliyuncs.com/livenowhy/remote_storage_adapter:lastest
+
+  `03_kapacitor` kapacitor:1.5
+
+    registry.cn-beijing.aliyuncs.com/livenowhy/kapacitor:1.5
+
+  `04_telegraf` telegraf:1.16
+    
+    registry.cn-beijing.aliyuncs.com/livenowhy/telegraf:1.16
+
+  `05_pushgateway` pushgateway:v1.3.0
+
+    registry.cn-beijing.aliyuncs.com/livenowhy/pushgateway:v1.3.0
+    
+### 12_influxdb
+
+  `01_1.8` influxdb:1.8
+
+    registry.cn-beijing.aliyuncs.com/livenowhy/influxdb:1.8
+
+  `02_2.0` influxdb:2.0.0-rc
+
+    registry.cn-beijing.aliyuncs.com/livenowhy/influxdb:2.0
+
+### 13_golang
+
+  `01_1.15.5-alpine3.12`
+
+    registry.cn-beijing.aliyuncs.com/livenowhy/golang:1.15.5-alpine3.12
+
+### 14_nginx
+
+  `01_1.18`
+
+    registry.cn-beijing.aliyuncs.com/livenowhy/nginx:1.18

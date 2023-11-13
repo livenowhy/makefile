@@ -1,0 +1,1 @@
+jupyter notebook --notebook-dir=/share/notebooks --ip='*' --port=8006 --no-browser --allow-root

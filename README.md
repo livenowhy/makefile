@@ -96,8 +96,6 @@
     registry.cn-beijing.aliyuncs.com/livenowhy/python:3.6-alpine
 
 
-
-
 ### 08_nas
 
   `01_calibre` 优化官方 calibre-web
@@ -140,6 +138,8 @@
   `05_pushgateway` pushgateway:v1.3.0
 
     registry.cn-beijing.aliyuncs.com/livenowhy/pushgateway:v1.3.0
+
+### 11_elasticsearch
     
 ### 12_influxdb
 
@@ -162,3 +162,11 @@
   `01_1.18`
 
     registry.cn-beijing.aliyuncs.com/livenowhy/nginx:1.18
+
+### 15_bytebase
+
+### 16_adminer
+
+### 18_ubuntu
+
+### 19_squid

@@ -14,3 +14,17 @@
   `3.16`: alpine 基础镜像
 
     registry.cn-beijing.aliyuncs.com/livenowhy/alpine:3.16
+
+### 02_mysql
+
+  `01_5.6` 官方 mysql 5.6
+
+    registry.cn-beijing.aliyuncs.com/livenowhy/mysql:5.6
+
+  `02_5.6.base` 基于 5.6 配置的 mysql 镜像
+
+    registry.cn-beijing.aliyuncs.com/livenowhy/mysql:5.6.base
+
+  `03_8.0` 官方 mysql 8.0
+
+    registry.cn-beijing.aliyuncs.com/livenowhy/mysql:8.0

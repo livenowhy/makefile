@@ -1,37 +1,37 @@
 version: '3.3'
 services:
-  # mysql:
-  #   image: registry.cn-beijing.aliyuncs.com/livenowhy/mysql:5.6.base
-  #   container_name: mysql
-  #   network_mode: "bridge"
-  #   restart: always
-  #   ports:
-  #     - 3306:3306
-  #   volumes:
-  #     - /bigdata/mysql:/var/lib/mysql
-  #   environment:
-  #     MYSQL_ROOT_PASSWORD: "Qp9tb869zXu4kh7Gm9R"
-  #     MYSQL_DATABASE: cmdb
-
-  mysql8:
-    image: registry.cn-beijing.aliyuncs.com/livenowhy/mysql:8.0.base
-    command: --default-authentication-plugin=mysql_native_password
-    container_name: mysql8
+  mysql:
+    image: registry.cn-beijing.aliyuncs.com/livenowhy/mysql:5.6.base
+    container_name: mysql
     network_mode: "bridge"
     restart: always
     ports:
       - 3306:3306
     volumes:
-      - /bigdata/mysql8:/var/lib/mysql
+      - /bigdata/mysql:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: "Qp9tb869zXu4kh7Gm9R"
+      MYSQL_DATABASE: cmdb
+
+  # mysql8:
+  #   image: registry.cn-beijing.aliyuncs.com/livenowhy/mysql:8.0.base
+  #   command: --default-authentication-plugin=mysql_native_password
+  #   container_name: mysql8
+  #   network_mode: "bridge"
+  #   restart: always
+  #   ports:
+  #     - 3306:3306
+  #   volumes:
+  #     - /bigdata/mysql8:/var/lib/mysql
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: "Qp9tb869zXu4kh7Gm9R"
   
-  adminer:
-    image: registry.cn-beijing.aliyuncs.com/livenowhy/adminer:4.8.1-standalone
-    restart: always
-    network_mode: "bridge"
-    ports:
-      - 8002:8080
+  # adminer:
+  #   image: registry.cn-beijing.aliyuncs.com/livenowhy/adminer:4.8.1-standalone
+  #   restart: always
+  #   network_mode: "bridge"
+  #   ports:
+  #     - 8002:8080
       
   redis:
     image: registry.cn-beijing.aliyuncs.com/livenowhy/redis:6.0.base

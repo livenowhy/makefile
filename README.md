@@ -182,6 +182,11 @@
 
 ### 16_adminer
 
+  `4.8.1-standalone` 官方 4.8.1-standalone 
+
+    registry.cn-beijing.aliyuncs.com/livenowhy/adminer:4.8.1-standalone  (已构建)
+
+
 ### 18_ubuntu
 
 ### 19_squid

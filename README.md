@@ -119,18 +119,28 @@
 
   `01_14.3.0`  官方 nodejs alpine3.10
 
-    registry.cn-beijing.aliyuncs.com/livenowhy/node:14.3.0-alpine3.10
+    registry.cn-beijing.aliyuncs.com/livenowhy/node:14.3.0-alpine3.10  (已构建)
 
   `02_19.0.0` 官方 nodejs 19.0.0-alpine3.15
+    
+    registry.cn-beijing.aliyuncs.com/livenowhy/node:19.0.0-alpine3.15  (已构建)
 
-  `03_latest`
+  `03_latest` 官方 最新 nodejs
+     
+     registry.cn-beijing.aliyuncs.com/livenowhy/node:latest  (已构建)
 
-  `04_10.22.0-buster-slim`
+  `04_10.22.0-buster-slim` 用于安装 gitbook 的 nodejs 版本
 
-  `05_gitbook`
+    registry.cn-beijing.aliyuncs.com/livenowhy/node:10.22.0-buster-slim  (已构建)
+
+  `05_gitbook` gitbook 版本
+
+    registry.cn-beijing.aliyuncs.com/livenowhy/node:gitbook  (已构建)
 
   `06_lts-alpine3.18`
-  
+      
+    registry.cn-beijing.aliyuncs.com/livenowhy/node:lts-alpine3.18  (已构建)
+
 
 ### 10_k8s
 

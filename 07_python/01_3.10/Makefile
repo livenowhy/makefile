@@ -1,8 +1,8 @@
 all: push
 
-# registry.cn-beijing.aliyuncs.com/livenowhy/python:latest
+# registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10
 
-TAG = latest
+TAG = 3.10
 PREFIX = registry.cn-beijing.aliyuncs.com
 
 IMAGE_NAME = livenowhy/python

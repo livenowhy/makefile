@@ -14,7 +14,7 @@ RUN apt-get install vim -y
 RUN apt-get install build-essential -y
 RUN apt-get install gcc -y
 RUN apt-get install mariadb-server mariadb-client -y
-RUN apt-get install python3-dev python-dev -y
+RUN apt-get install python3-dev -y
 RUN apt-get install manpages-dev -y
 RUN apt-get install libsasl2-dev libldap2-dev libssl-dev -y
 

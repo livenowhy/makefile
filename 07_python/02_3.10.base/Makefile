@@ -1,8 +1,7 @@
 all: push
 
-TAG = base
+TAG = 3.10.base
 PREFIX = registry.cn-beijing.aliyuncs.com
-
 IMAGE_NAME = livenowhy/python
 
 container:

@@ -73,35 +73,31 @@
 
     registry.cn-beijing.aliyuncs.com/livenowhy/centos:tools  (已构建)
 
-### 07_python
+### 07_python (无法自动构建)
 
-  `01_latest`: python latest 官方镜像
+  `01_3.10`: python 3.10 官方镜像
 
-    registry.cn-beijing.aliyuncs.com/livenowhy/python:latest
+    registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10  (已经手动构建)
 
-  `02_base`:   基于 latest 配置了基础环境的镜像
+  `02_3.10.base`:   基于 3.10 配置了基础环境的镜像
 
-    registry.cn-beijing.aliyuncs.com/livenowhy/python:base
+    registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.base
 
-  `03_ethnic`: 基于 base 配置 的 ethnic 镜像
+  `03_ethnic`: 基于 3.10.base 配置 的 ethnic 镜像
 
     registry.cn-beijing.aliyuncs.com/livenowhy/python:ethnic
 
-  `04_temporalio`: 基于 base 配置的 temporalio 镜像
+  `04_temporalio`: 基于 3.10.base 配置的 temporalio 镜像
     
     registry.cn-beijing.aliyuncs.com/livenowhy/python:temporalio
 
-  `05_3.6-alpine`  python:3.6-alpine
+  `05_3.10-alpine`  python:3.6-alpine
     
     registry.cn-beijing.aliyuncs.com/livenowhy/python:3.6-alpine
 
   `06_3.6-alpine-base`  基于 3.6-alpine 配置的 python 镜像
     
     registry.cn-beijing.aliyuncs.com/livenowhy/python:3.6-alpine-base
-
-  `07_3.8` python:3.8
-
-    registry.cn-beijing.aliyuncs.com/livenowhy/python:3.8
 
 
 ### 08_nas

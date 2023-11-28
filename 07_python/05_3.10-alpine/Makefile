@@ -1,6 +1,6 @@
 all: push
 
-TAG = 3.6-alpine
+TAG = 3.10-alpine
 PREFIX = registry.cn-beijing.aliyuncs.com
 IMAGE_NAME = livenowhy/python
 

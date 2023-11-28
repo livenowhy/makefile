@@ -1,5 +1,7 @@
 FROM registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10
 
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 0E98404D386FA1D9 F8D2585B8783D481 6ED0E7B82643E131 54404762BBB6E853 BDE6D2B9216EC7A8
+
 RUN apt-get update
 RUN apt-get install vim -y
 RUN apt-get install build-essential -y

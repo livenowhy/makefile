@@ -1,7 +1,5 @@
 all: push
 
-# registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10
-
 TAG = 3.10
 PREFIX = registry.cn-beijing.aliyuncs.com
 
@@ -15,3 +13,5 @@ push: container
 
 clean:
 	docker rmi -f $(PREFIX):$(TAG) || true
+
+# registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10

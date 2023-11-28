@@ -1,6 +1,12 @@
 FROM registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10
 
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 0E98404D386FA1D9 F8D2585B8783D481 6ED0E7B82643E131 54404762BBB6E853 BDE6D2B9216EC7A8
+# 获取 gpg 公钥 (多次执行不会改变也不会影响)
+RUN gpg --keyserver keyserver.ubuntu.com --recv-keys 0E98404D386FA1D9 F8D2585B8783D481 6ED0E7B82643E131 54404762BBB6E853 BDE6D2B9216EC7A8
+
+# gpg --export --armor 0E98404D386FA1D9 > /etc/apt/trusted.gpg.d/0E98404D386FA1D9.gpg
+# gpg --export --armor 0E98404D386FA1D9 F8D2585B8783D481 6ED0E7B82643E131 54404762BBB6E853 BDE6D2B9216EC7A8 | apt-key add -
+
+# /etc/apt/trusted.gpg.d
 
 RUN apt-get update
 RUN apt-get install vim -y

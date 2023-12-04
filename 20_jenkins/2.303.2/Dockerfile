@@ -1,0 +1,1 @@
+FROM jenkins/jenkins:2.303.2

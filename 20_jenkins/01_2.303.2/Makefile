@@ -14,4 +14,4 @@ push: container
 clean:
 	docker rmi -f $(PREFIX):$(TAG) || true
 
-# registry.cn-beijing.aliyuncs.com/livenowhy/jenkins:3.10
+# registry.cn-beijing.aliyuncs.com/livenowhy/jenkins:2.303.2

@@ -196,3 +196,9 @@
 ### 18_ubuntu
 
 ### 19_squid
+
+### 20_jenkins
+  
+  `01_2.303.2` 官方 2.303.2 jenkins 镜像
+
+    registry.cn-beijing.aliyuncs.com/livenowhy/jenkins:2.303.2 (已构建)

@@ -9,6 +9,6 @@ services:
       - 50000:50000
       - 8080:8080
     volumes:
-      - /bigdata/jenkins:/var/jenkins
+      - /bigdata/jenkins:/var/jenkins_home
 
 # docker-compose stop && docker-compose rm -f

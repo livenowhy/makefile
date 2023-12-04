@@ -22,3 +22,7 @@ chmod -R a+wr /bigdata/rabbitmq
 # 创建 Jupyter Notebook 文件夹
 mkdir -p /bigdata/jupyter
 chmod -R a+wr /bigdata/jupyter
+
+# 
+mkdir -p /bigdata/jenkins
+chmod -R a+wr /bigdata/jenkins

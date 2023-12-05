@@ -11,3 +11,6 @@ services:
     volumes:
       - /bigdata/jenkins:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
+
+# docker-compose stop && docker-compose rm -f
+# TEST: user: admin, passwd: admin@admin

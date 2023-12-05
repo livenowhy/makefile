@@ -23,6 +23,6 @@ chmod -R a+wr /bigdata/rabbitmq
 mkdir -p /bigdata/jupyter
 chmod -R a+wr /bigdata/jupyter
 
-# 
+# 创建 jenkins 需要的文件夹
 mkdir -p /bigdata/jenkins
 chmod -R a+wr /bigdata/jenkins

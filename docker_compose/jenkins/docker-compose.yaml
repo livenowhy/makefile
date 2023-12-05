@@ -3,6 +3,7 @@ services:
   jenkins:
     image: registry.cn-beijing.aliyuncs.com/livenowhy/jenkins:blueocean1.25.7
     container_name: jenkins
+    user: root
     network_mode: "bridge"
     restart: always
     ports:

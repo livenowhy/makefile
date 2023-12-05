@@ -1,7 +1,7 @@
 version: '3.3'
 services:
   jenkins:
-    image: registry.cn-beijing.aliyuncs.com/livenowhy/jenkins:2.303.2
+    image: registry.cn-beijing.aliyuncs.com/livenowhy/jenkins:blueocean1.25.7
     container_name: jenkins
     network_mode: "bridge"
     restart: always
@@ -10,5 +10,4 @@ services:
       - 8080:8080
     volumes:
       - /bigdata/jenkins:/var/jenkins_home
-
-# docker-compose stop && docker-compose rm -f
+      - /var/run/docker.sock:/var/run/docker.sock

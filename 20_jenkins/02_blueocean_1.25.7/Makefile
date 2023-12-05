@@ -14,4 +14,7 @@ push: container
 clean:
 	docker rmi -f $(PREFIX):$(TAG) || true
 
-# registry.cn-beijing.aliyuncs.com/livenowhy/jenkins:2.303.2
+# registry.cn-beijing.aliyuncs.com/livenowhy/jenkins:blueocean1.25.7
+
+
+# docker run -p 8080:8080 jenkinsci/blueocean

@@ -15,6 +15,3 @@ clean:
 	docker rmi -f $(PREFIX):$(TAG) || true
 
 # registry.cn-beijing.aliyuncs.com/livenowhy/jenkins:blueocean1.25.7
-
-
-# docker run -p 8080:8080 jenkinsci/blueocean

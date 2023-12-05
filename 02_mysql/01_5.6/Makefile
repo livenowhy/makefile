@@ -4,7 +4,6 @@ TAG = 5.6
 PREFIX = registry.cn-beijing.aliyuncs.com
 IMAGE_NAME = livenowhy/mysql
 
-
 container:
 	docker build -t ${PREFIX}/${IMAGE_NAME}:${TAG} .
 

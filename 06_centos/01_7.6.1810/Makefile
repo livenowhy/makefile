@@ -1,6 +1,6 @@
 all: push
 
-TAG = latest
+TAG = 7.6.1810
 PREFIX = registry.cn-beijing.aliyuncs.com
 IMAGE_NAME = livenowhy/centos
 STATUS = 无法自动构建   # 状态: 已自动构建, 未构建

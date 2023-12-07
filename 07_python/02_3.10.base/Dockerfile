@@ -1,4 +1,5 @@
 FROM registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10
+LABEL description="基于官方 python 3.10 制作的基本镜像"
 
 # 安装基本开发包
 RUN apt-get update -y && apt-get upgrade -y

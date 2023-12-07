@@ -3,6 +3,7 @@ all: push
 TAG = 3.10-alpine-base
 PREFIX = registry.cn-beijing.aliyuncs.com
 IMAGE_NAME = livenowhy/python
+STATUS = 无法自动构建   # 状态: 已自动构建, 未构建
 
 container:
 	docker build -t ${PREFIX}/${IMAGE_NAME}:${TAG} .

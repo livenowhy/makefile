@@ -1,5 +1,5 @@
 
-SUBDIRS=01_7.6 02_tools
+SUBDIRS=01_latest 02_tools
 
 subdirs:
 	for dir in $(SUBDIRS); do \

@@ -14,13 +14,3 @@ push: container
 
 clean:
 	docker rmi -f ${PREFIX}/${IMAGE_NAME}:${TAG} || true
-
-
-run: rm
-	docker run --name=${CONTAINER_NAME} -d  ${PREFIX}/${IMAGE_NAME}:${TAG}
-
-stop:
-	docker stop ${CONTAINER_NAME} || true
-
-rm: stop
-	docker rm -f ${CONTAINER_NAME} || true

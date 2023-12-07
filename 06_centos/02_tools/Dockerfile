@@ -1,5 +1,5 @@
-FROM registry.cn-beijing.aliyuncs.com/livenowhy/centos:7.6
-LABEL description="基于官方 centos 7.6制作的业务镜像"
+FROM registry.cn-beijing.aliyuncs.com/livenowhy/centos:latest
+LABEL description="基于官方 centos latest 制作的业务镜像"
 
 RUN yum update -y && yum upgrade -y
 RUN yum -y groupinstall "Development tools"

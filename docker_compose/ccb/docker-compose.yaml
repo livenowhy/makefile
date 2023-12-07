@@ -2,7 +2,7 @@ version: '3.3'
 services:
   django:
     image: registry.cn-beijing.aliyuncs.com/livenowhy/centos:ccb
-    container_name: ccb-develop
+    container_name: ccb
     network_mode: "bridge"
     restart: always
     command: sh /share/makefile/docker_compose/script/daemon.sh

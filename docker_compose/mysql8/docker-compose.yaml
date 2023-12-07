@@ -1,0 +1,25 @@
+version: '3.3'
+services:
+  mysql:
+    image: registry.cn-beijing.aliyuncs.com/livenowhy/mysql:5.6.base
+    container_name: mysql
+    network_mode: "bridge"
+    restart: always
+    ports:
+      - 3306:3306
+    volumes:
+      - /bigdata/mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: "Qp9tb869zXu4kh7Gm9R"
+      MYSQL_DATABASE: person
+      
+  redis:
+    image: registry.cn-beijing.aliyuncs.com/livenowhy/redis:6.0.base
+    container_name: db_redis
+    network_mode: "bridge"
+    restart: always
+    ports:
+      - 6379:6379
+
+
+# docker-compose stop && docker-compose rm -f

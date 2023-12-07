@@ -3,6 +3,7 @@ all: push
 TAG = tools
 PREFIX = registry.cn-beijing.aliyuncs.com
 IMAGE_NAME = livenowhy/centos
+STATUS = 已构建   # 状态: 已自动构建, 未构建
 
 container:
 	docker build -t ${PREFIX}/${IMAGE_NAME}:${TAG} .
@@ -12,7 +13,3 @@ push: container
 
 clean:
 	docker rmi -f $(PREFIX):$(TAG) || true
-
-
-# CentOS基础镜像制作
-# registry.cn-beijing.aliyuncs.com/livenowhy/centos:tools

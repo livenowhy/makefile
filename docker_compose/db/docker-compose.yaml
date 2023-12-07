@@ -11,27 +11,7 @@ services:
       - /bigdata/mysql:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: "Qp9tb869zXu4kh7Gm9R"
-      MYSQL_DATABASE: cmdb
-
-  # mysql8:
-  #   image: registry.cn-beijing.aliyuncs.com/livenowhy/mysql:8.0.base
-  #   command: --default-authentication-plugin=mysql_native_password
-  #   container_name: mysql8
-  #   network_mode: "bridge"
-  #   restart: always
-  #   ports:
-  #     - 3306:3306
-  #   volumes:
-  #     - /bigdata/mysql8:/var/lib/mysql
-  #   environment:
-  #     MYSQL_ROOT_PASSWORD: "Qp9tb869zXu4kh7Gm9R"
-  
-  # adminer:
-  #   image: registry.cn-beijing.aliyuncs.com/livenowhy/adminer:4.8.1-standalone
-  #   restart: always
-  #   network_mode: "bridge"
-  #   ports:
-  #     - 8002:8080
+      MYSQL_DATABASE: person
       
   redis:
     image: registry.cn-beijing.aliyuncs.com/livenowhy/redis:6.0.base

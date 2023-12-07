@@ -1,7 +1,7 @@
 version: '3.3'
 services:
   mysql8:
-    image: registry.cn-beijing.aliyuncs.com/livenowhy/mysql:5.6.base
+    image: registry.cn-beijing.aliyuncs.com/livenowhy/mysql:8.0-debian
     container_name: mysql8
     network_mode: "bridge"
     restart: always

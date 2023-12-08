@@ -1,7 +1,7 @@
 version: '3.3'
 services:
   jenkins:
-    image: registry.cn-beijing.aliyuncs.com/livenowhy/jenkins:lts-jdk17
+    image: registry.cn-beijing.aliyuncs.com/livenowhy/jenkins:jdk17
     container_name: jenkins
     user: root
     network_mode: "bridge"

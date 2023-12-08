@@ -1,9 +1,9 @@
 all: push
 
-TAG = 2.303.2
+TAG = lts-jdk17
 PREFIX = registry.cn-beijing.aliyuncs.com
-
 IMAGE_NAME = livenowhy/jenkins
+STATUS = 已构建   # 状态: 已自动构建, 未构建
 
 container:
 	docker build -t ${PREFIX}/${IMAGE_NAME}:${TAG} .
@@ -14,4 +14,4 @@ push: container
 clean:
 	docker rmi -f $(PREFIX):$(TAG) || true
 
-# registry.cn-beijing.aliyuncs.com/livenowhy/jenkins:2.303.2
+# registry.cn-beijing.aliyuncs.com/livenowhy/jenkins:lts-jdk17

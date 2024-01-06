@@ -1,35 +1,33 @@
+" File    : .vimrc "
+" Author  : lzp    "
+
 " Disable compatibility with vi which can cause unexpected issues.
+" 关闭兼容模式, 由于这个选项是最最基础的选项，会连带很多其它选项发生变动(称作副作用), 所以它必需是第一个设定的选项 
 set nocompatible
 
 " 打开 24 位真彩色支持
 " set termguicolors
 
-" 搜索的时候忽略大小字字母
-set ignorecase
-" 若搜索内容中有大写字母，则不再忽略大小写
-set smartcase
+set ignorecase       " 搜索忽略大小写
+set smartcase        " 若搜索内容中有大写字母，则不再忽略大小写
+filetype on          " 启用类型文件检测, Vim 将能够尝试检测正在使用的文件类型
+filetype plugin on   " 文件类型插件生效 Enable plugins and load plugin for the detected file type.
 
-" Enable type file detection. Vim will be able to try to detect the type of file in use.
-filetype on
 
-" Enable plugins and load plugin for the detected file type.
-filetype plugin on
+filetype indent on   " 文件类型缩进生效 Load an indent file for the detected file type.
 
-" Load an indent file for the detected file type.
-filetype indent on
+syntax on       " 语法高亮
+set number      " 显示行号
+set cursorline  " 突出显示当前行
 
-syntax on
 
-set number
 
-" Set shift width to 4 spaces.
-set shiftwidth=4
+set shiftwidth=4   " Set shift width to 4 spaces.
+set tabstop=4      " Tab键的宽度 Set tab width to 4 columns.
+set expandtab      " 设置之后, 会把一个 tab 字符替换成 tabstop 选项值对应的多个空格(Use space characters instead of tabs.)
 
-" Set tab width to 4 columns.
-set tabstop=4
 
-" Use space characters instead of tabs.
-set expandtab
+" end end
 
 " Do not save backup files.
 set nobackup
@@ -41,7 +39,7 @@ set scrolloff=10
 set nowrap
 
 " While searching though a file incrementally highlight matching characters as you type.
-set incsearch
+set incsearch   " 增强搜索
 
 " Ignore capital letters during search.
 set ignorecase
@@ -54,30 +52,10 @@ set noswapfile
 
 set backspace=indent,eol,start
 
+
 call plug#begin()
 
 Plug 'preservim/nerdtree'
-Plug 'majutsushi/tagbar'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
-Plug 'fatih/vim-go', { 'tag': '*' }
-
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'ycm-core/YouCompleteMe'
-let g:ycm_server_keep_logfiles = 1
-let g:ycm_server_log_level = 'debug'
-Plug 'w0rp/ale'
-Plug 'uber/prototool', { 'rtp':'vim/prototool' }
-"Plug 'psf/black', { 'branch': 'stable' }
-
-Plug 'google/vim-maktaba'
-Plug 'google/vim-codefmt'
-Plug 'google/vim-glaive'
-Plug 'fisadev/vim-isort'
-
-Plug 'jceb/vim-orgmode'
 
 call plug#end()
 

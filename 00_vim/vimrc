@@ -1,0 +1,111 @@
+" Disable compatibility with vi which can cause unexpected issues.
+set nocompatible
+
+" 打开 24 位真彩色支持
+" set termguicolors
+
+" 搜索的时候忽略大小字字母
+set ignorecase
+" 若搜索内容中有大写字母，则不再忽略大小写
+set smartcase
+
+" Enable type file detection. Vim will be able to try to detect the type of file in use.
+filetype on
+
+" Enable plugins and load plugin for the detected file type.
+filetype plugin on
+
+" Load an indent file for the detected file type.
+filetype indent on
+
+syntax on
+
+set number
+
+" Set shift width to 4 spaces.
+set shiftwidth=4
+
+" Set tab width to 4 columns.
+set tabstop=4
+
+" Use space characters instead of tabs.
+set expandtab
+
+" Do not save backup files.
+set nobackup
+
+" Do not let cursor scroll below or above N number of lines when scrolling.
+set scrolloff=10
+
+" Do not wrap lines. Allow long lines to extend as far as the line goes.
+set nowrap
+
+" While searching though a file incrementally highlight matching characters as you type.
+set incsearch
+
+" Ignore capital letters during search.
+set ignorecase
+
+" Override the ignorecase option if searching for capital letters.
+" This will allow you to search specifically for capital letters.
+set smartcase
+
+set noswapfile
+
+set backspace=indent,eol,start
+
+call plug#begin()
+
+Plug 'preservim/nerdtree'
+Plug 'majutsushi/tagbar'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
+Plug 'fatih/vim-go', { 'tag': '*' }
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'ycm-core/YouCompleteMe'
+let g:ycm_server_keep_logfiles = 1
+let g:ycm_server_log_level = 'debug'
+Plug 'w0rp/ale'
+Plug 'uber/prototool', { 'rtp':'vim/prototool' }
+"Plug 'psf/black', { 'branch': 'stable' }
+
+Plug 'google/vim-maktaba'
+Plug 'google/vim-codefmt'
+Plug 'google/vim-glaive'
+Plug 'fisadev/vim-isort'
+
+Plug 'jceb/vim-orgmode'
+
+call plug#end()
+
+nmap <C-p> :Files<CR>
+nmap <C-e> :Buffers<CR>
+nmap <C-g> :Ag<CR>
+let g:fzf_action = { 'ctrl-e': 'edit' }
+
+let g:black_linelength = 120
+
+let g:ale_fix_on_save = 1
+let g:ale_completion_enabled = 1
+let g:ale_sign_column_always = 1
+let g:ale_python_flake8_options = '--max-line-length=120'
+let g:airline#extensions#ale#enabled = 1
+let g:ale_fixers = {}
+let g:ale_fixers.python = ['black']
+
+let g:vim_isort_map = '<C-i>'
+let g:vim_isort_python_version = 'python3'
+
+let g:airline_theme='light'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+
+set fileencodings=ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1
+set termencoding=utf-8
+set encoding=utf-8
+
+map <C-K> :pyf /opt/homebrew/Cellar/clang-format/15.0.4/share/clang/clang-format.py<cr>
+imap <C-K> <c-o>:pyf /opt/homebrew/Cellar/clang-format/15.0.4/share/clang/clang-format.py<cr>

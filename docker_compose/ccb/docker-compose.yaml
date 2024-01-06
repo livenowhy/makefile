@@ -10,4 +10,5 @@ services:
       - 8002:8002
     volumes:
       - /share/makefile/docker_compose/script:/share/makefile/docker_compose/script
-      
+
+# docker-compose stop && docker-compose rm -f

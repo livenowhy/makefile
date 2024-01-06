@@ -53,9 +53,31 @@ set noswapfile
 set backspace=indent,eol,start
 
 
+
 call plug#begin()
 
 Plug 'preservim/nerdtree'
+Plug 'majutsushi/tagbar'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
+Plug 'fatih/vim-go', { 'tag': '*' }
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'ycm-core/YouCompleteMe'
+let g:ycm_server_keep_logfiles = 1
+let g:ycm_server_log_level = 'debug'
+Plug 'w0rp/ale'
+Plug 'uber/prototool', { 'rtp':'vim/prototool' }
+"Plug 'psf/black', { 'branch': 'stable' }
+
+Plug 'google/vim-maktaba'
+Plug 'google/vim-codefmt'
+Plug 'google/vim-glaive'
+Plug 'fisadev/vim-isort'
+
+Plug 'jceb/vim-orgmode'
 
 call plug#end()
 

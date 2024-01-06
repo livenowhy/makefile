@@ -1,20 +1,16 @@
 ## 配置
 
-### 1、手动安装插件
+### 1、安装插件管理器(vim-plug)
     
-    从 vim 版本 8 开始，可以使用默认的包管理工具安装插件，而无需包管理器。
-    你可以将 vim 插件放在 ~/.vim/pack/vendor/start/plugin_name 目录中。
-    注意，plugin_name 文件夹名称因插件而异(插件名)。
+    https://github.com/junegunn/vim-plug
+    $ wget https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    $ mkdit ~/.vim/autoload/
+    $ cp plug.vim ~/.vim/autoload/.
 
-    例如安装 nerdtree 插件
-    $ cd ~
-    $ mkdir -p .vim/pack/vendor/start/
-    $ cd .vim/pack/vendor/start/
-    $ 
+    或者
+    $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-    $ cp Desktop/share/makefile/00_vim/vimrc ~/.vimrc
-
-
+    cp vimrc ~/.vimrc
 
 ## plug
 

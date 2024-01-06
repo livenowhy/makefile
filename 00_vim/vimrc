@@ -56,10 +56,22 @@ set backspace=indent,eol,start
 
 call plug#begin()
 
+" A tree explorer plugin for vim.
+" git clone git@github.com:preservim/nerdtree.git
 Plug 'preservim/nerdtree'
+
+" Vim plugin that displays tags in a window, ordered by scope
+" git clone git@github.com:preservim/tagbar.git
 Plug 'majutsushi/tagbar'
+
+" lean & mean status/tabline for vim that's light as air
+" git clone git@github.com:vim-airline/vim-airline.git
 Plug 'vim-airline/vim-airline'
+
+" A collection of themes for vim-airline
+" git clone git@github.com:vim-airline/vim-airline-themes.git
 Plug 'vim-airline/vim-airline-themes'
+
 " Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
 Plug 'fatih/vim-go', { 'tag': '*' }
 
@@ -75,7 +87,7 @@ Plug 'uber/prototool', { 'rtp':'vim/prototool' }
 Plug 'google/vim-maktaba'
 Plug 'google/vim-codefmt'
 Plug 'google/vim-glaive'
-Plug 'fisadev/vim-isort'
+Plug 'fisadev/vim-isort'  " pip install isort
 
 Plug 'jceb/vim-orgmode'
 

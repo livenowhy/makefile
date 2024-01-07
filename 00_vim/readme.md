@@ -10,7 +10,7 @@
     或者
     $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-    cp vimrc ~/.vimrc
+    $ cp vimrc ~/.vimrc
 
 
 ### 特殊插件说明
@@ -20,3 +20,9 @@
     # pip install isort
     Plug 'fisadev/vim-isort'
     https://github.com/fisadev/vim-isort
+
+
+### 问题
+
+    1、requires Vim compiled with Python (3.8.0+) support
+    $ brew install macvim

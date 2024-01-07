@@ -8,51 +8,37 @@ set nocompatible
 " 打开 24 位真彩色支持
 " set termguicolors
 
-set ignorecase       " 搜索忽略大小写
-set smartcase        " 若搜索内容中有大写字母，则不再忽略大小写
+set ignorecase       " 搜索时忽略大小写  (Ignore capital letters during search.)
+
+set smartcase        " 如果同时打开了 ignorecase, 那么对于只有一个大写字母的搜索词, 将大小写敏感; 
+                     " 其他情况都是大小写不敏感
+                     " Override the ignorecase option if searching for capital letters.
+                     " This will allow you to search specifically for capital letters.
+
 filetype on          " 启用类型文件检测, Vim 将能够尝试检测正在使用的文件类型
 filetype plugin on   " 文件类型插件生效 Enable plugins and load plugin for the detected file type.
-
-
 filetype indent on   " 文件类型缩进生效 Load an indent file for the detected file type.
+syntax on            " 语法高亮
+set number           " 显示行号
+set cursorline       " 突出显示当前行
+set shiftwidth=4     " 执行移位操作'>>或<<'时, 显示的空格数 (Set shift width to 4 spaces.)
+set tabstop=4        " Tab键的宽度 Set tab width to 4 columns.
+set expandtab        " 设置之后, 会把一个 tab 字符替换成 tabstop 选项值对应的多个空格(Use space characters instead of tabs.)
+set nobackup         " 关闭自动备份功能 ( Do not save backup files.)
+set scrolloff=10     " 上下间隙10行 (Do not let cursor scroll below or above N number of lines when scrolling.)
+set nowrap           " 关闭自动折行为 (Do not wrap lines. Allow long lines to extend as far as the line goes.)
+set incsearch        " 增量搜索匹配结果, 即每输入一个字母都会进行匹配 (While searching though a file incrementally highlight matching characters as you type.)
+set noswapfile       " 不创建交换文件, 交换文件主要用于系统崩溃时恢复文件, 文件名结尾是.swp
 
-syntax on       " 语法高亮
-set number      " 显示行号
-set cursorline  " 突出显示当前行
-
-
-
-set shiftwidth=4   " Set shift width to 4 spaces.
-set tabstop=4      " Tab键的宽度 Set tab width to 4 columns.
-set expandtab      " 设置之后, 会把一个 tab 字符替换成 tabstop 选项值对应的多个空格(Use space characters instead of tabs.)
-
+set fileencodings=ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1
+set termencoding=utf-8
+set encoding=utf-8   " 当前文本使用uf8编码
 
 " end end
 
-" Do not save backup files.
-set nobackup
 
-" Do not let cursor scroll below or above N number of lines when scrolling.
-set scrolloff=10
-
-" Do not wrap lines. Allow long lines to extend as far as the line goes.
-set nowrap
-
-" While searching though a file incrementally highlight matching characters as you type.
-set incsearch   " 增强搜索
-
-" Ignore capital letters during search.
-set ignorecase
-
-" Override the ignorecase option if searching for capital letters.
-" This will allow you to search specifically for capital letters.
-set smartcase
-
-set noswapfile
 
 set backspace=indent,eol,start
-
-
 
 call plug#begin()
 
@@ -78,46 +64,54 @@ Plug 'fatih/vim-go', { 'tag': '*' }
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'ycm-core/YouCompleteMe'
-let g:ycm_server_keep_logfiles = 1
-let g:ycm_server_log_level = 'debug'
-Plug 'w0rp/ale'
+
+" Check syntax in Vim/Neovim asynchronously and fix files, with Language Server Protocol (LSP) support
+" git clone git@github.com:dense-analysis/ale.git
+Plug 'dense-analysis/ale'
 Plug 'uber/prototool', { 'rtp':'vim/prototool' }
 "Plug 'psf/black', { 'branch': 'stable' }
 
 Plug 'google/vim-maktaba'
 Plug 'google/vim-codefmt'
 Plug 'google/vim-glaive'
-Plug 'fisadev/vim-isort'  " pip install isort
 
+" pip install isort
+Plug 'fisadev/vim-isort'
 Plug 'jceb/vim-orgmode'
 
 call plug#end()
 
-nmap <C-p> :Files<CR>
-nmap <C-e> :Buffers<CR>
-nmap <C-g> :Ag<CR>
+
+" YouCompleteMe
+let g:ycm_server_log_level = 'debug'
+let g:ycm_server_keep_logfiles = 1
+
 let g:fzf_action = { 'ctrl-e': 'edit' }
 
 let g:black_linelength = 120
 
+" ale 配置
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
 let g:ale_sign_column_always = 1
 let g:ale_python_flake8_options = '--max-line-length=120'
-let g:airline#extensions#ale#enabled = 1
 let g:ale_fixers = {}
 let g:ale_fixers.python = ['black']
+
+
 
 let g:vim_isort_map = '<C-i>'
 let g:vim_isort_python_version = 'python3'
 
+let g:airline#extensions#ale#enabled = 1
 let g:airline_theme='light'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
-set fileencodings=ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1
-set termencoding=utf-8
-set encoding=utf-8
 
+nmap <C-p> :Files<CR>
+nmap <C-e> :Buffers<CR>
+nmap <C-g> :Ag<CR>
 map <C-K> :pyf /opt/homebrew/Cellar/clang-format/15.0.4/share/clang/clang-format.py<cr>
 imap <C-K> <c-o>:pyf /opt/homebrew/Cellar/clang-format/15.0.4/share/clang/clang-format.py<cr>
+

@@ -98,8 +98,6 @@ let g:ale_python_flake8_options = '--max-line-length=120'
 let g:ale_fixers = {}
 let g:ale_fixers.python = ['black']
 
-
-
 let g:vim_isort_map = '<C-i>'
 let g:vim_isort_python_version = 'python3'
 
@@ -115,3 +113,7 @@ nmap <C-g> :Ag<CR>
 map <C-K> :pyf /opt/homebrew/Cellar/clang-format/15.0.4/share/clang/clang-format.py<cr>
 imap <C-K> <c-o>:pyf /opt/homebrew/Cellar/clang-format/15.0.4/share/clang/clang-format.py<cr>
 
+" map : 定义所有模式下的通用快捷键
+" imap: 定义插入模式下的快捷键(insert)
+" nmpa: 定义普通模式下的快捷键(normal)
+" vmap: 定义选择模式下的快捷键(visual)

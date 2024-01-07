@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# 创建根目录
 mkdir -p /bigdata
 chmod -R a+wr /bigdata
 

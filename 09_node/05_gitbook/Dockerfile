@@ -2,6 +2,7 @@ FROM registry.cn-beijing.aliyuncs.com/livenowhy/node:10.22.0-buster-slim
 LABEL description="gitbook镜像"
 
 ARG VERSION=3.0.0
+RUN npm config set registry=https://registry.npmmirror.com
 LABEL version=$VERSION
 RUN npm install --global gitbook-cli
 RUN gitbook fetch ${VERSION}

@@ -1,6 +1,6 @@
 all: push
 
-TAG = ai
+TAG = python
 PREFIX = registry.cn-beijing.aliyuncs.com
 IMAGE_NAME = livenowhy/ubuntu
 
@@ -13,4 +13,4 @@ push: container
 clean:
 	docker rmi -f $(PREFIX):$(TAG) || true
 
-# registry.cn-beijing.aliyuncs.com/livenowhy/ubuntu:jupyter
+# registry.cn-beijing.aliyuncs.com/livenowhy/ubuntu:python

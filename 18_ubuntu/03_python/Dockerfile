@@ -1,6 +1,6 @@
 FROM registry.cn-beijing.aliyuncs.com/livenowhy/ubuntu:develop
 
-LABEL description="Make Ubuntu Development Environment (django)"
+LABEL description="Make Ubuntu Development Environment (python)"
 
 RUN python3 -m pip install --upgrade pip
 RUN pip3 install django==4.2.2
@@ -12,6 +12,6 @@ RUN pip3 install openpyxl==3.1.
 RUN pip3 install loguru==0.7.2
 
 ADD my.pth /usr/lib/python3/dist-packages/my.pth
-EXPOSE 8011 8012 8013 8014 8015 8016 8017 8018 8019
+EXPOSE 8000 8001 8002 8003 8004 8005 8006 8007 8008
 ADD run.sh /root/run.sh
 ENTRYPOINT ["/bin/bash", "/root/run.sh"]

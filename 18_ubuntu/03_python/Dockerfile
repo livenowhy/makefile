@@ -8,8 +8,15 @@ RUN pip3 install mysqlclient==2.1.1
 RUN pip3 install djangorestframework==3.14.0
 RUN pip3 install asgiref==3.6.0
 RUN pip3 install sqlparse==0.4.4
-RUN pip3 install openpyxl==3.1.
+RUN pip3 install openpyxl==3.1.2
 RUN pip3 install loguru==0.7.2
+RUN pip3 install requests==2.31.0
+RUN pip3 install RUN pip3 install pandas==2.1.3
+RUN pip3 install sqlalchemy==2.0.23
+RUN pip3 install tornado==6.3.3
+RUN pip3 install ipython==8.18.0
+RUN pip3 install tzdata==2024.1
+
 
 ADD my.pth /usr/lib/python3/dist-packages/my.pth
 EXPOSE 8000 8001 8002 8003 8004 8005 8006 8007 8008

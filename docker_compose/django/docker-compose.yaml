@@ -16,5 +16,4 @@ services:
       - 8007:8007
       - 8008:8008
     volumes:
-      - /share/notebooks:/share/notebooks
       - /share:/share

@@ -11,7 +11,7 @@ RUN pip3 install sqlparse==0.4.4
 RUN pip3 install openpyxl==3.1.2
 RUN pip3 install loguru==0.7.2
 RUN pip3 install requests==2.31.0
-RUN pip3 install RUN pip3 install pandas==2.1.3
+RUN pip3 install pandas==2.1.3
 RUN pip3 install sqlalchemy==2.0.23
 RUN pip3 install tornado==6.3.3
 RUN pip3 install ipython==8.18.0

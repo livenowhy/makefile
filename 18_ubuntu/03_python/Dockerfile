@@ -26,7 +26,7 @@ RUN echo 'files = /etc/supervisord.d/*.ini' >> /etc/supervisord.conf
 RUN mkdir /etc/supervisord.d/
 RUN mkdir /var/log/supervisor/
 ADD django.ini /etc/supervisord.d/django.ini
-RUN supervisord -c /etc/supervisord.conf
+# RUN supervisord -c /etc/supervisord.conf
 
 
 EXPOSE 8000 8001 8002 8003 8004 8005 8006 8007 8008

@@ -1,3 +1,6 @@
+
+supervisord -c /etc/supervisord.conf
+
 while :
 do
   echo "run sleep"

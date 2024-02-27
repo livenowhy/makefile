@@ -25,7 +25,7 @@ RUN echo '[include]' >> /etc/supervisord.conf
 RUN echo 'files = /etc/supervisord.d/*.ini' >> /etc/supervisord.conf
 RUN mkdir /etc/supervisord.d/
 RUN mkdir /var/log/supervisor/
-ADD django.ini /etc/supervisor/conf.d/django.ini
+ADD django.ini /etc/supervisord.d/django.ini
 RUN supervisord -c /etc/supervisord.conf
 
 

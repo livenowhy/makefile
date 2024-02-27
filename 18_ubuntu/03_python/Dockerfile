@@ -19,14 +19,13 @@ RUN pip3 install tzdata==2024.1
 
 ADD my.pth /usr/lib/python3/dist-packages/my.pth
 
-
 RUN pip3 install supervisor
 RUN echo_supervisord_conf > /etc/supervisord.conf
 RUN echo '[include]' >> /etc/supervisord.conf
 RUN echo 'files = /etc/supervisord.d/*.ini' >> /etc/supervisord.conf
 RUN mkdir /etc/supervisord.d/
 RUN mkdir /var/log/supervisor/
-ADD my.pth django.conf /etc/supervisor/conf.d/django.conf
+ADD django.ini /etc/supervisor/conf.d/django.ini
 RUN supervisord -c /etc/supervisord.conf
 
 

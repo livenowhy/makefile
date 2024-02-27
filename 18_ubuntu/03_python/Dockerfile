@@ -17,8 +17,21 @@ RUN pip3 install tornado==6.3.3
 RUN pip3 install ipython==8.18.0
 RUN pip3 install tzdata==2024.1
 
-
 ADD my.pth /usr/lib/python3/dist-packages/my.pth
+
+
+RUN pip3 install supervisor
+RUN echo_supervisord_conf > /etc/supervisord.conf
+RUN echo '[include]' >> /etc/supervisord.conf
+RUN echo 'files = /etc/supervisord.d/*.ini' >> /etc/supervisord.conf
+RUN mkdir /etc/supervisord.d/
+RUN mkdir /var/log/supervisor/
+ADD my.pth django.conf /etc/supervisor/conf.d/django.conf
+RUN supervisord -c /etc/supervisord.conf
+
+
 EXPOSE 8000 8001 8002 8003 8004 8005 8006 8007 8008
 ADD run.sh /root/run.sh
 ENTRYPOINT ["/bin/bash", "/root/run.sh"]
+
+# docker-compose stop && docker-compose rm -f

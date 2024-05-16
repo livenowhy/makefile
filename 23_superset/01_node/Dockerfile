@@ -24,6 +24,6 @@ RUN --mount=type=bind,target=./package.json,src=./superset-frontend/package.json
     --mount=type=bind,target=./package-lock.json,src=./superset-frontend/package-lock.json \
     npm ci
 
-COPY ./superset-frontend ./
-# This seems to be the most expensive step
-RUN npm run ${BUILD_CMD}
+# COPY ./superset-frontend ./
+# # This seems to be the most expensive step
+# RUN npm run ${BUILD_CMD}

@@ -26,8 +26,8 @@ RUN apt-get install -y --no-install-recommends \
         libecpg-dev \
         libldap2-dev
 
-RUN touch superset/static/version_info.json \
-RUN chown -R superset:superset ./* \
+RUN touch superset/static/version_info.json
+RUN chown -R superset:superset ./*
 RUN rm -rf /var/lib/apt/lists/*
 
 # COPY --chown=superset:superset pyproject.toml setup.py MANIFEST.in README.md ./

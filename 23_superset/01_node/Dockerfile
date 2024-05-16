@@ -1,8 +1,10 @@
 # if BUILDPLATFORM is null, set it to 'amd64' (or leave as is otherwise).
-LABEL description="superset node 镜像, 基于 node:18-bullseye-slim"
 
 ARG BUILDPLATFORM=${BUILDPLATFORM:-amd64}
 FROM --platform=${BUILDPLATFORM} node:18-bullseye-slim   
+
+LABEL description="superset node 镜像, 基于 node:18-bullseye-slim"
+
 
 ARG NPM_BUILD_CMD="build"
 

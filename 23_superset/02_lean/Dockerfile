@@ -25,22 +25,15 @@ RUN apt-get install -y --no-install-recommends \
         libsasl2-modules-gssapi-mit \
         libpq-dev \
         libecpg-dev \
-        libldap2-dev
-
-RUN touch superset/static/version_info.json
-RUN chown -R superset:superset ./*
-RUN rm -rf /var/lib/apt/lists/*
-
-RUN apt-get update && apt-get install -y --no-install-recommends \
+        libldap2-dev \
         build-essential
 
-RUN --mount=type=cache,target=/root/.cache/pip \
-        && pip install --upgrade setuptools pip
+RUN pip install --upgrade setuptools pip
 
-RUN pip install pip install apache-superset==4.0.0
+RUN pip install apache-superset==4.0.0
 
-RUN apt-get autoremove -y --purge build-essential \
-        && rm -rf /var/lib/apt/lists/*
+RUN apt-get autoremove -y --purge build-essential
+RUN rm -rf /var/lib/apt/lists/*
 
 
 # COPY --chown=superset:superset pyproject.toml setup.py MANIFEST.in README.md ./

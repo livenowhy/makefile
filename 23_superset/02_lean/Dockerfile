@@ -15,9 +15,15 @@ RUN apt-get install -y --no-install-recommends build-essential
 RUN apt-get install -y --no-install-recommends vim
 RUN pip install --upgrade setuptools pip
 RUN pip install apache-superset==4.0.0
+RUN pip install mysqlclient
+
+#     $ sudo apt-get install pkg-config build-essential libmysqlclient-dev
+#     $ pip install mysqlclient
 
 COPY superset_config.py /usr/local/lib/python3.10/site-packages/superset/superset_config.py
 
+RUN echo "export SUPERSET_CONFIG_PATH=/usr/local/lib/python3.10/site-packages/superset/superset_config.py" >> /etc/profile
+RUN source /etc/profile
 # RUN apt-get autoremove -y --purge build-essential
 # RUN rm -rf /var/lib/apt/lists/*
 
@@ -35,7 +41,17 @@ EXPOSE ${SUPERSET_PORT}
 #         RUN mkdir -p ${PYTHONPATH} superset/static requirements superset-frontend apache_superset.egg-info requirements
 #         RUN useradd --user-group -d ${SUPERSET_HOME} -m --no-log-init --shell /bin/bash superset
 
-# 
+#     $ superset db upgrade
+    
+# 2. 创建超级管理员
+# $ export FLASK_AP=superset
+
+# $ superset fab create-admin
+
+# 密码: admin@2222
+
+# 3. superset 初始化
+# $ superset init
 
 
 # 从 node 镜像中把构建产物 copy 出来

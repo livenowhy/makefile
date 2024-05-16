@@ -30,18 +30,18 @@ RUN touch superset/static/version_info.json \
 RUN chown -R superset:superset ./* \
 RUN rm -rf /var/lib/apt/lists/*
 
-COPY --chown=superset:superset pyproject.toml setup.py MANIFEST.in README.md ./
+# COPY --chown=superset:superset pyproject.toml setup.py MANIFEST.in README.md ./
 
-# setup.py uses the version information in package.json
-COPY --chown=superset:superset superset-frontend/package.json superset-frontend/
-COPY --chown=superset:superset requirements/base.txt requirements/
-RUN --mount=type=cache,target=/root/.cache/pip \
-    apt-get update && apt-get install -y --no-install-recommends \
-      build-essential \
-    && pip install --upgrade setuptools pip \
-    && pip install -r requirements/base.txt \
-    && apt-get autoremove -y --purge build-essential \
-    && rm -rf /var/lib/apt/lists/*
+# # setup.py uses the version information in package.json
+# COPY --chown=superset:superset superset-frontend/package.json superset-frontend/
+# COPY --chown=superset:superset requirements/base.txt requirements/
+# RUN --mount=type=cache,target=/root/.cache/pip \
+#     apt-get update && apt-get install -y --no-install-recommends \
+#       build-essential \
+#     && pip install --upgrade setuptools pip \
+#     && pip install -r requirements/base.txt \
+#     && apt-get autoremove -y --purge build-essential \
+#     && rm -rf /var/lib/apt/lists/*
 
 # 从 node 镜像中把构建产物 copy 出来
 # COPY --chown=superset:superset --from=superset-node /app/superset/static/assets superset/static/assets

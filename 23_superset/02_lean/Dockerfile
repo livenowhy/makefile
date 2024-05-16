@@ -31,7 +31,7 @@ RUN touch superset/static/version_info.json
 RUN chown -R superset:superset ./*
 RUN rm -rf /var/lib/apt/lists/*
 
-RUN RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get update && apt-get install -y --no-install-recommends \
         build-essential
 
 RUN --mount=type=cache,target=/root/.cache/pip \

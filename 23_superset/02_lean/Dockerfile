@@ -16,14 +16,13 @@ RUN apt-get install -y --no-install-recommends vim
 RUN pip install --upgrade setuptools pip
 RUN pip install apache-superset==4.0.0
 RUN pip install mysqlclient
-
-#     $ sudo apt-get install pkg-config build-essential libmysqlclient-dev
-#     $ pip install mysqlclient
+RUN pip install Pillow
 
 COPY superset_config.py /usr/local/lib/python3.10/site-packages/superset/superset_config.py
 
 RUN echo "export SUPERSET_CONFIG_PATH=/usr/local/lib/python3.10/site-packages/superset/superset_config.py" >> /etc/profile
 RUN source /etc/profile
+
 # RUN apt-get autoremove -y --purge build-essential
 # RUN rm -rf /var/lib/apt/lists/*
 
@@ -36,38 +35,15 @@ ENV LANG=C.UTF-8 \
 
 EXPOSE ${SUPERSET_PORT}
 
-# sudo apt-get install -y   python-pip  python-dev-is-python3
+# # 1. 初始化数据
+# RUN superset db upgrade
 
-#         RUN mkdir -p ${PYTHONPATH} superset/static requirements superset-frontend apache_superset.egg-info requirements
-#         RUN useradd --user-group -d ${SUPERSET_HOME} -m --no-log-init --shell /bin/bash superset
+# # 2. 创建超级管理员
+# RUN superset fab create-admin --username admin --firstname Superset --lastname Admin --email admin@superset.com --password admin
 
-#     $ superset db upgrade
-    
-# 2. 创建超级管理员
-# $ export FLASK_AP=superset
-
-# $ superset fab create-admin
-
-# 密码: admin@2222
-
-# 3. superset 初始化
-# $ superset init
-
-
-# 从 node 镜像中把构建产物 copy 出来
-# COPY --chown=superset:superset --from=superset-node /app/superset/static/assets superset/static/assets
-# ## Lastly, let's install superset itself
-# COPY --chown=superset:superset superset superset
-# RUN --mount=type=cache,target=/root/.cache/pip \
-#     pip install -e . \
-#     && flask fab babel-compile --target superset/translations \
-#     && chown -R superset:superset superset/translations
-
-# COPY --chmod=755 ./docker/run-server.sh /usr/bin/
-# USER superset
+# # 3. 初始化
+# RUN superset init
 
 # HEALTHCHECK CMD curl -f "http://localhost:${SUPERSET_PORT}/health"
-
-# EXPOSE ${SUPERSET_PORT}
 
 # CMD ["/usr/bin/run-server.sh"]

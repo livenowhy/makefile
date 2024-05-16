@@ -35,8 +35,7 @@ RUN pip install apache-superset==4.0.0
 RUN apt-get autoremove -y --purge build-essential
 RUN rm -rf /var/lib/apt/lists/*
 
-
-# COPY --chown=superset:superset superset-frontend/package.json superset-frontend/
+COPY --chown=superset:superset superset_config.py /usr/local/lib/python3.10/site-packages/superset/superset_config.py
 
 
 # 从 node 镜像中把构建产物 copy 出来

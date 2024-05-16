@@ -13,6 +13,9 @@ container:
 push: container
 	docker push ${PREFIX}/${IMAGE_NAME}:${TAG}
 
+pull: 
+	docker pull ${PREFIX}/${IMAGE_NAME}:${TAG}
+
 clean:
 	docker rmi -f $(PREFIX):$(TAG) || true
 

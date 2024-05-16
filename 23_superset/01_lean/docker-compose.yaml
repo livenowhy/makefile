@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+  superset:
+    image: registry.cn-beijing.aliyuncs.com/livenowhy/jenkins:jdk17
+    container_name: superset
+    user: root
+    network_mode: "bridge"
+    restart: always
+    ports:
+      - 9088:8088
+    volumes:
+      - /bigdata/superset:/var/superset
+
+# docker-compose stop && docker-compose rm -f

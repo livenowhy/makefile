@@ -14,19 +14,19 @@ ENV LANG=C.UTF-8 \
     SUPERSET_HOME="/app/superset_home" \
     SUPERSET_PORT=8088
 
-# RUN mkdir -p ${PYTHONPATH} superset/static requirements superset-frontend apache_superset.egg-info requirements \
-#     && useradd --user-group -d ${SUPERSET_HOME} -m --no-log-init --shell /bin/bash superset \
-#     && apt-get update -qq && apt-get install -yqq --no-install-recommends \
-#         curl \
-#         default-libmysqlclient-dev \
-#         libsasl2-dev \
-#         libsasl2-modules-gssapi-mit \
-#         libpq-dev \
-#         libecpg-dev \
-#         libldap2-dev \
-#     && touch superset/static/version_info.json \
-#     && chown -R superset:superset ./* \
-#     && rm -rf /var/lib/apt/lists/*
+RUN mkdir -p ${PYTHONPATH} superset/static requirements superset-frontend apache_superset.egg-info requirements \
+    && useradd --user-group -d ${SUPERSET_HOME} -m --no-log-init --shell /bin/bash superset \
+    && apt-get update -qq && apt-get install -yqq --no-install-recommends \
+        curl \
+        default-libmysqlclient-dev \
+        libsasl2-dev \
+        libsasl2-modules-gssapi-mit \
+        libpq-dev \
+        libecpg-dev \
+        libldap2-dev \
+    && touch superset/static/version_info.json \
+    && chown -R superset:superset ./* \
+    && rm -rf /var/lib/apt/lists/*
 
 # COPY --chown=superset:superset pyproject.toml setup.py MANIFEST.in README.md ./
 # # setup.py uses the version information in package.json

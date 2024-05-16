@@ -17,15 +17,13 @@ RUN pip install --upgrade setuptools pip
 RUN pip install apache-superset==4.0.0
 RUN pip install mysqlclient
 RUN pip install Pillow
+# RUN apt-get autoremove -y --purge build-essential
+# RUN rm -rf /var/lib/apt/lists/*
 
 COPY superset_config.py /usr/local/lib/python3.10/site-packages/superset/superset_config.py
 
 RUN echo "export SUPERSET_CONFIG_PATH=/usr/local/lib/python3.10/site-packages/superset/superset_config.py" >> /etc/profile
 RUN source /etc/profile
-
-# RUN apt-get autoremove -y --purge build-essential
-# RUN rm -rf /var/lib/apt/lists/*
-
 
 WORKDIR /app
 ENV LANG=C.UTF-8 \

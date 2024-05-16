@@ -1,9 +1,9 @@
 all: push
 
-TAG = node
+TAG = 3.10.14-bookworm
 PREFIX = registry.cn-beijing.aliyuncs.com
-IMAGE_NAME = livenowhy/superset
-STATUS = 已构建   # 状态: 已自动构建, 未构建
+IMAGE_NAME = livenowhy/python
+STATUS = 无法自动构建   # 状态: 已自动构建, 未构建
 
 container:
 	docker build -t ${PREFIX}/${IMAGE_NAME}:${TAG} .

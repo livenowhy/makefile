@@ -4,6 +4,7 @@ FROM python:${PY_VER}
 
 LABEL description="superset 镜像, 基于 3.10-slim-bookworm"
 
+RUN mkdir -p /app
 WORKDIR /app
 ENV LANG=C.UTF-8 \
     LC_ALL=C.UTF-8 \

@@ -27,3 +27,5 @@ stop:
 
 rm: stop
 	docker rm -f ${CONTAINER_NAME} || true
+
+# docker run --name=superset -it -p 9088:8088 -v superset_config.py:/usr/local/lib/python3.10/site-packages/superset/superset_config.py registry.cn-beijing.aliyuncs.com/livenowhy/superset:lean

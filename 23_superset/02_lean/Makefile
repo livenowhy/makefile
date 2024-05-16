@@ -5,6 +5,8 @@ PREFIX = registry.cn-beijing.aliyuncs.com
 IMAGE_NAME = livenowhy/superset
 STATUS = 已构建   # 状态: 已自动构建, 未构建
 
+CONTAINER_NAME = superset
+
 container:
 	docker build -t ${PREFIX}/${IMAGE_NAME}:${TAG} .
 
@@ -13,3 +15,12 @@ push: container
 
 clean:
 	docker rmi -f $(PREFIX):$(TAG) || true
+
+run: rm pull
+	docker run --name=${CONTAINER_NAME} -d -p 9088:8088 ${PREFIX}/${IMAGE_NAME}:${TAG}
+
+stop:
+	docker stop ${CONTAINER_NAME} || true
+
+rm: stop
+	docker rm -f ${CONTAINER_NAME} || true

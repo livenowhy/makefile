@@ -16,7 +16,7 @@ ENV LANG=C.UTF-8 \
 
 RUN mkdir -p ${PYTHONPATH} superset/static requirements superset-frontend apache_superset.egg-info requirements \
     && useradd --user-group -d ${SUPERSET_HOME} -m --no-log-init --shell /bin/bash superset \
-    && apt-get update -qq && apt-get install -yqq --no-install-recommends \
+    && apt-get update && apt-get install -y --no-install-recommends \
         curl \
         default-libmysqlclient-dev \
         libsasl2-dev \
@@ -34,11 +34,11 @@ COPY --chown=superset:superset pyproject.toml setup.py MANIFEST.in README.md ./
 COPY --chown=superset:superset superset-frontend/package.json superset-frontend/
 COPY --chown=superset:superset requirements/base.txt requirements/
 RUN --mount=type=cache,target=/root/.cache/pip \
-    apt-get update -qq && apt-get install -yqq --no-install-recommends \
+    apt-get update && apt-get install -y --no-install-recommends \
       build-essential \
     && pip install --upgrade setuptools pip \
     && pip install -r requirements/base.txt \
-    && apt-get autoremove -yqq --purge build-essential \
+    && apt-get autoremove -y --purge build-essential \
     && rm -rf /var/lib/apt/lists/*
 
 # 从 node 镜像中把构建产物 copy 出来

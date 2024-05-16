@@ -5,11 +5,10 @@ FROM --platform=${BUILDPLATFORM} node:18-bullseye-slim
 
 LABEL description="superset node 镜像, 基于 node:18-bullseye-slim"
 
-
 ARG NPM_BUILD_CMD="build"
 
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
+RUN apt-get update
+RUN apt-get install -y --no-install-recommends \
         build-essential \
         python3
 

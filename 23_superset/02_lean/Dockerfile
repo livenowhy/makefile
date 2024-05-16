@@ -4,7 +4,6 @@ FROM python:${PY_VER}
 
 LABEL description="superset 镜像, 基于 3.10-slim-bookworm"
 
-
 WORKDIR /app
 ENV LANG=C.UTF-8 \
     LC_ALL=C.UTF-8 \
@@ -14,19 +13,22 @@ ENV LANG=C.UTF-8 \
     SUPERSET_HOME="/app/superset_home" \
     SUPERSET_PORT=8088
 
-RUN mkdir -p ${PYTHONPATH} superset/static requirements superset-frontend apache_superset.egg-info requirements \
-    && useradd --user-group -d ${SUPERSET_HOME} -m --no-log-init --shell /bin/bash superset \
-    && apt-get update && apt-get install -y --no-install-recommends \
+RUN mkdir -p ${PYTHONPATH} superset/static requirements superset-frontend apache_superset.egg-info requirements
+RUN useradd --user-group -d ${SUPERSET_HOME} -m --no-log-init --shell /bin/bash superset
+RUN apt-get update
+
+RUN apt-get install -y --no-install-recommends \
         curl \
         default-libmysqlclient-dev \
         libsasl2-dev \
         libsasl2-modules-gssapi-mit \
         libpq-dev \
         libecpg-dev \
-        libldap2-dev \
-    && touch superset/static/version_info.json \
-    && chown -R superset:superset ./* \
-    && rm -rf /var/lib/apt/lists/*
+        libldap2-dev
+
+RUN touch superset/static/version_info.json \
+RUN chown -R superset:superset ./* \
+RUN rm -rf /var/lib/apt/lists/*
 
 COPY --chown=superset:superset pyproject.toml setup.py MANIFEST.in README.md ./
 

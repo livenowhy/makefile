@@ -27,21 +27,3 @@ ENV LANG=C.UTF-8 \
     SUPERSET_PORT=8088
 
 EXPOSE ${SUPERSET_PORT}
-
-# COPY superset_config.py /usr/local/lib/python3.10/site-packages/superset/superset_config.py
-
-# RUN echo "export SUPERSET_CONFIG_PATH=/usr/local/lib/python3.10/site-packages/superset/superset_config.py" >> /etc/profile
-# RUN source /etc/profile
-
-# # 1. 初始化数据
-# RUN superset db upgrade
-
-# # 2. 创建超级管理员
-# RUN superset fab create-admin --username admin --firstname Superset --lastname Admin --email admin@superset.com --password admin
-
-# # 3. 初始化
-# RUN superset init
-
-# HEALTHCHECK CMD curl -f "http://localhost:${SUPERSET_PORT}/health"
-
-# CMD ["/usr/bin/run-server.sh"]

@@ -38,6 +38,19 @@ WTF_CSRF_EXEMPT_LIST = ['']
 
 AUTH_ROLE_PUBLIC = "Public"
 
+
+# iframe 跨域问题
+TALISMAN_ENABLED = False
+HTTP_HEADERS = {"X-Frame-Options": "ALLOWALL"} 
+
+SUPERSET_FEATURE_EMBEDDED_SUPERSET=True
+ENABLE_CORS = True
+CORS_OPTIONS = {
+  'supports_credentials': True,
+  'allow_headers': ['Content-Type', 'Authorization'],
+  'resources': {'*': {'origins': '*'}}
+}
+
 # A CSRF token that expires in 1 year
 # CSFR 令牌过期时间 1 年
 WTF_CSRF_TIME_LIMIT = 60 * 60 * 24 * 365

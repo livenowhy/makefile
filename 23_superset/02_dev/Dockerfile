@@ -3,6 +3,7 @@ FROM registry.cn-beijing.aliyuncs.com/livenowhy/superset:lean
 LABEL description="superset 镜像, 基于 superset 前置镜像"
 
 RUN pip install flask_cors
+EXPOSE 8088
 
 ADD superset_config.py /usr/local/lib/python3.10/site-packages/superset/superset_config.py
 

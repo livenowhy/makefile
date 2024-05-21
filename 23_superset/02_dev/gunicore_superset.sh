@@ -12,7 +12,7 @@ check_server_pid()
 start_server()
 {
     #gunicorn --workers 5 --timeout 120 --bind 0.0.0.0:8088 "${SERVER_APP_NAME}" --daemon
-    gunicorn --workers 5 --timeout 120 --worker-connections=1000 --bind 0.0.0.0:8088 "${SERVER_APP_NAME}"
+    gunicorn --workers 5 --timeout 120 --worker-connections=1000 --bind 0.0.0.0:8088 "${SERVER_APP_NAME}" #--daemon
 }
 
 start()

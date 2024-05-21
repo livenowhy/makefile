@@ -31,11 +31,12 @@ SQLALCHEMY_DATABASE_URI = "mysql://root:Qp9tb869zXu4kh7Gm9R@192.168.198.101:8306
 
 # Flask-WTF flag for CSRF
 # 跨域请求攻击标识
-WTF_CSRF_ENABLED = True
-
+WTF_CSRF_ENABLED = False
 # Add endpoints that need to be exempt from CSRF protection
 # CSRF 白名单
-WTF_CSRF_EXEMPT_LIST = []
+WTF_CSRF_EXEMPT_LIST = ['']
+
+AUTH_ROLE_PUBLIC = "Public"
 
 # A CSRF token that expires in 1 year
 # CSFR 令牌过期时间 1 年

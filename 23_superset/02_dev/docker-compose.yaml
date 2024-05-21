@@ -7,8 +7,8 @@ services:
     network_mode: "bridge"
     restart: always
     ports:
-      - 8088:8088
-    # volumes:
-    #   - /bigdata/superset:/var/superset
+      - 9088:8088
+    volumes:
+      - /home/lzp/Desktop/makefile/23_superset/02_dev/superset_config.py:/usr/local/lib/python3.10/site-packages/superset/superset_config.py
 
 # docker-compose stop && docker-compose rm -f

@@ -3,6 +3,7 @@
 # SS 相关的配置, 行数限制 5000 行
 ROW_LIMIT = 5000
 
+DEBUG = True
 # 网站服务器端口 8088，如果该端口被占用，改为其他端口比如18088
 SUPERSET_WEBSERVER_PORT = 8088
 
@@ -43,11 +44,13 @@ AUTH_ROLE_PUBLIC = "Public"
 TALISMAN_ENABLED = False
 
 ENABLE_CORS = True
-#CORS_OPTIONS = {
-#  'supports_credentials': True,
-#  'allow_headers': ['Content-Type', 'Authorization'],
-#  'resources': {'*': {'origins': '*'}}
-#}
+CORS_OPTIONS = {
+        'supports_credentials': True,
+        'allow_headers': ['Content-Type', 'Authorization'],
+        'resources': {'*': {'origins': '*'}}
+}
+
+FAB_API_SWAGGER_UI = True
 
 # A CSRF token that expires in 1 year
 # CSFR 令牌过期时间 1 年

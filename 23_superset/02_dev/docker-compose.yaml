@@ -9,6 +9,9 @@ services:
     ports:
       - 9088:8088
     mem_limit: 8g
+
+    extra_hosts:
+      - "ubuntu.livenowhy.com:192.168.227.101"
     volumes:
       - /home/lzp/Desktop/makefile/23_superset/02_dev/superset_config.py:/usr/local/lib/python3.10/site-packages/superset/superset_config.py
       - /home/lzp/Desktop/makefile/23_superset/02_dev/gunicore_superset.sh:/app/gunicore_superset.sh

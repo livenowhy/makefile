@@ -27,7 +27,7 @@ SECRET_KEY = "M1bvA2JdwofwrcPwOJc3K6I9IaRueNHQBIPRQ8/TSFT4cErvJ/ifuWT7"
 # 这个连接信息定义了 SS 元数据库的路径（切片、连接、表、数据面板等等）
 # 注意：需要探索的数据源连接及数据库连接直接通过网页界面进行管理
 #SQLALCHEMY_DATABASE_URI = 'sqlite:path/to/superset.db'
-SQLALCHEMY_DATABASE_URI = "mysql://root:Qp9tb869zXu4kh7Gm9R@192.168.198.101:8306/superset_docker"
+SQLALCHEMY_DATABASE_URI = "mysql://root:Qp9tb869zXu4kh7Gm9R@ubuntu.livenowhy.com:8306/superset_docker"
 
 # Flask-WTF flag for CSRF
 # 跨域请求攻击标识

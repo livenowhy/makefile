@@ -20,7 +20,7 @@ clean:
 	docker rmi -f $(PREFIX):$(TAG) || true
 
 run: rm pull
-	docker run --name=${CONTAINER_NAME} -d --privileged -p 9088:8088 ${PREFIX}/${IMAGE_NAME}:${TAG}
+	docker run --name=${CONTAINER_NAME} -d --privileged -p 9188:8088 ${PREFIX}/${IMAGE_NAME}:${TAG}
 
 stop:
 	docker stop ${CONTAINER_NAME} || true

@@ -17,8 +17,13 @@ start_server()
     --error-logfile error.log \
     --workers 5 \
     --timeout 120 \
+    --worker-class=gevent  \
+    --worker-connections=1000 \
     "${SERVER_APP_NAME}" \
     --daemon
+    
+    gunicorn --bind 0.0.0.0:8088  --access-logfile access.log --error-logfile error.log --workers 5 --timeout 120 --worker-class=gevent --worker-connections=1000 "superset.app:create_app()"
+    # gunicorn --worker-class=gevent --worker-connections=1000 --workers=3 
     # gunicorn --workers 5 --timeout 120 --bind 0.0.0.0:8088 "superset.app:create_app()" 
 }
 

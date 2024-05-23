@@ -3,24 +3,19 @@ FROM registry.cn-beijing.aliyuncs.com/livenowhy/superset:lean
 LABEL description="superset 镜像, 基于 superset 前置镜像"
 
 
-ENV LANG=C.UTF-8 \
-    LC_ALL=C.UTF-8 \
-    FLASK_APP="superset.app:create_app()" \
-    SUPERSET_PORT=8088
-
-EXPOSE ${SUPERSET_PORT}
-
+ADD superset_config.py /usr/local/lib/python3.10/site-packages/superset/superset_config.py
 
 EXPOSE 8088
 EXPOSE 8888
 
-
-
-ADD superset_config.py /usr/local/lib/python3.10/site-packages/superset/superset_config.py
+ENV LANG=C.UTF-8
+ENV LC_ALL=C.UTF-8
+ENV FLASK_APP="superset.app:create_app()" 
 
 ENV FLASK_AP=superset
 ENV SUPERSET_CONFIG_PATH=/usr/local/lib/python3.10/site-packages/superset/superset_config.py
 RUN superset superset init
+
 COPY --chmod=755 gunicore_superset.sh /app/gunicore_superset.sh
 COPY --chmod=755 run-server.sh        /app/run-server.sh
 

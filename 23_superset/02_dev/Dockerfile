@@ -2,14 +2,14 @@ FROM registry.cn-beijing.aliyuncs.com/livenowhy/superset:lean
 
 LABEL description="superset 镜像, 基于 superset 前置镜像"
 
-RUN pip install flask_cors
 
-# 预测插件
-RUN pip install prophet
+ENV LANG=C.UTF-8 \
+    LC_ALL=C.UTF-8 \
+    FLASK_APP="superset.app:create_app()" \
+    SUPERSET_PORT=8088
 
-RUN pip install jupyterlab
+EXPOSE ${SUPERSET_PORT}
 
-# jupyter lab --allow-root
 
 EXPOSE 8088
 EXPOSE 8888

@@ -7,7 +7,14 @@ RUN pip install flask_cors
 # 预测插件
 RUN pip install prophet
 
+RUN pip install jupyterlab
+
+# jupyter lab --allow-root
+
 EXPOSE 8088
+EXPOSE 8888
+
+
 
 ADD superset_config.py /usr/local/lib/python3.10/site-packages/superset/superset_config.py
 

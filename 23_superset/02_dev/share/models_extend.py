@@ -12,8 +12,6 @@ from sqlalchemy import (
     String,
 )
 
-
-
 # jupyterlab
 class JupyterLabModel(Model):
     __tablename__ = 'jupyterlab'

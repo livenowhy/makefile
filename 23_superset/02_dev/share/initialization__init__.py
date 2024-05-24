@@ -414,7 +414,7 @@ class SupersetAppInitializer:  # pylint: disable=too-many-public-methods
             JupyterLabView,
             "jupyterlab",
             label=__("Jupyterhub"),
-            href="/jupyterlabView/jupyterlab",
+            href="/jupyterlabview/jupyterlab",
             icon='fa-cogs',
             category = "SQL Lab",
             category_label = __("SQL Lab"),

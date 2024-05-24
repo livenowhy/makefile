@@ -1017,5 +1017,5 @@ class JupyterModel(Model):
     __tablename__ = 'Jupyter'
     type = "table"
     id = Column(Integer, primary_key=True)
-    name = Column(String(256))
-    info = Column(String(256))
+    name = Column(String(256), nullable=True)
+    info = Column(String(256), nullable=True)

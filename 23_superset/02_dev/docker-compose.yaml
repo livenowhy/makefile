@@ -17,6 +17,7 @@ services:
       - /home/lzp/Desktop/makefile/23_superset/02_dev/gunicore_superset.sh:/app/gunicore_superset.sh
       - /home/lzp/Desktop/makefile/23_superset/02_dev/share/:/app/share/
       - /home/lzp/Desktop/makefile/23_superset/02_dev/jupyter_lab_config.py:/root/.jupyter/jupyter_lab_config.py
+      - /home/lzp/Desktop/makefile/23_superset/02_dev/jupyter_lab_config.py:/usr/local/lib/python3.10/site-packages/superset/jupyterlab/jupyter_lab_config.py
 
       - /home/lzp/Desktop/makefile/23_superset/02_dev/share/jupyterlab.html:/usr/local/lib/python3.10/site-packages/superset/templates/jupyterlab.html
       - /home/lzp/Desktop/makefile/23_superset/02_dev/share/views_extend.py:/usr/local/lib/python3.10/site-packages/superset/views/extend.py
@@ -24,15 +25,5 @@ services:
       - /home/lzp/Desktop/makefile/23_superset/02_dev/share/models_extend.py:/usr/local/lib/python3.10/site-packages/superset/models/extend.py
       - /home/lzp/Desktop/makefile/23_superset/02_dev/share/models__init__.py:/usr/local/lib/python3.10/site-packages/superset/models/__init__.py
       - /home/lzp/Desktop/makefile/23_superset/02_dev/share/initialization__init__.py:/usr/local/lib/python3.10/site-packages/superset/initialization/__init__.py
-
-# jupyter lab --allow-root  --ip 0.0.0.0
-# jupyter lab --generate-config
-
+      
 # sudo docker-compose stop && sudo docker-compose rm -f
-
-# cd /usr/local/lib/python3.10/site-packages/superset
-# mkdir jupyterlab
-# cd /usr/local/lib/python3.10/site-packages/superset/jupyterlab/
-# jupyter lab --allow-root  --ServerApp.tornado_settings='{"headers":{"Content-Security-Policy":"frame-ancestors self *; report-uri /api/security/csp-report"}}' --allow-root --no-browser --ip=0.0.0.0 --port=8888 --ServerApp.token='' --ServerApp.password='' --ServerApp.quit_button=False
-
-# https://blog.csdn.net/qq_45957580/article/details/122496670

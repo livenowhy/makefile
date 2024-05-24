@@ -15,6 +15,7 @@ ENV FLASK_APP="superset.app:create_app()"
 ENV FLASK_AP=superset
 ENV SUPERSET_CONFIG_PATH=/usr/local/lib/python3.10/site-packages/superset/superset_config.py
 RUN superset superset init
+RUN mkdir -p /usr/local/lib/python3.10/site-packages/superset/jupyterlab/
 
 COPY --chmod=755 gunicore_superset.sh /app/gunicore_superset.sh
 COPY --chmod=755 run-server.sh        /app/run-server.sh

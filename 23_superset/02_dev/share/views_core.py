@@ -91,6 +91,8 @@ from superset.views.base import (
     handle_api_exception,
     json_error_response,
     json_success,
+    DeleteMixin,         # add lzp
+    SupersetModelView    # add lzp
 )
 from superset.views.utils import (
     bootstrap_user_data,
@@ -928,3 +930,19 @@ class Superset(BaseSupersetView):
     @deprecated(new_target="/sqllab/history")
     def sqllab_history(self) -> FlaskResponse:
         return redirect("/sqllab/history")
+
+
+# add lzp
+from superset.models.core import JupyterModel
+from flask_appbuilder.models.sqla.interface import SQLAInterface
+
+# BaseSupersetView
+
+class JupyterView(SupersetModelView, DeleteMixin):
+    datamodel = SQLAInterface(JupyterModel)
+    label_columns = {'name':'Name', 'info':'Info'}
+    list_columns = ['name', 'Name']
+
+    @expose('/jupyter')
+    def jupyter(self):
+        return self.render_template('jupyter.html')

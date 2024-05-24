@@ -18,4 +18,13 @@ services:
       - /home/lzp/Desktop/makefile/23_superset/02_dev/share/:/app/share/
       - /home/lzp/Desktop/makefile/23_superset/02_dev/jupyter_lab_config.py:/root/.jupyter/jupyter_lab_config.py
       
+      - /home/lzp/Desktop/makefile/23_superset/02_dev/share/views_core.py:/usr/local/lib/python3.10/site-packages/superset/views/core.py
+      - /home/lzp/Desktop/makefile/23_superset/02_dev/share/models_core.py:/usr/local/lib/python3.10/site-packages/superset/models/core.py
+
 # docker-compose stop && docker-compose rm -f
+
+
+# cd /usr/local/lib/python3.10/site-packages/superset
+# mkdir jupyterlab
+# cd /usr/local/lib/python3.10/site-packages/superset/jupyterlab/
+# 

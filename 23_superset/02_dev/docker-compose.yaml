@@ -20,6 +20,7 @@ services:
 
       - /home/lzp/Desktop/makefile/23_superset/02_dev/share/jupyterlab.html:/usr/local/lib/python3.10/site-packages/superset/templates/jupyterlab.html
       - /home/lzp/Desktop/makefile/23_superset/02_dev/share/views_extend.py:/usr/local/lib/python3.10/site-packages/superset/views/extend.py
+      - /home/lzp/Desktop/makefile/23_superset/02_dev/share/views__init__.py:/usr/local/lib/python3.10/site-packages/superset/views/__init__.py
       - /home/lzp/Desktop/makefile/23_superset/02_dev/share/models_extend.py:/usr/local/lib/python3.10/site-packages/superset/models/extend.py
       - /home/lzp/Desktop/makefile/23_superset/02_dev/share/models__init__.py:/usr/local/lib/python3.10/site-packages/superset/models/__init__.py
       - /home/lzp/Desktop/makefile/23_superset/02_dev/share/initialization__init__.py:/usr/local/lib/python3.10/site-packages/superset/initialization/__init__.py

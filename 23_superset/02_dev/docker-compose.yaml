@@ -28,12 +28,10 @@ services:
 # jupyter lab --generate-config
 
 # sudo docker-compose stop && sudo docker-compose rm -f
-# superset db migrate
-# superset db upgrade
 
 # cd /usr/local/lib/python3.10/site-packages/superset
 # mkdir jupyterlab
 # cd /usr/local/lib/python3.10/site-packages/superset/jupyterlab/
-#
+# jupyter lab --allow-root  --ServerApp.tornado_settings='{"headers":{"Content-Security-Policy":"frame-ancestors self *; report-uri /api/security/csp-report"}}' --allow-root --no-browser --ip=0.0.0.0 --port=8888 --ServerApp.token='' --ServerApp.password='' --ServerApp.quit_button=False
 
 # https://blog.csdn.net/qq_45957580/article/details/122496670

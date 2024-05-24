@@ -24,7 +24,7 @@ services:
       - /home/lzp/Desktop/makefile/23_superset/02_dev/share/initialization__init__.py:/usr/local/lib/python3.10/site-packages/superset/initialization/__init__.py
 
 
-# docker-compose stop && docker-compose rm -f
+# sudo docker-compose stop && sudo docker-compose rm -f
 
 
 # cd /usr/local/lib/python3.10/site-packages/superset

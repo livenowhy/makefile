@@ -13,12 +13,6 @@ from sqlalchemy import (
 )
 
 
-config = app.config
-custom_password_store = config["SQLALCHEMY_CUSTOM_PASSWORD_STORE"]
-stats_logger = config["STATS_LOGGER"]
-log_query = config["QUERY_LOGGER"]
-metadata = Model.metadata  # pylint: disable=no-member
-logger = logging.getLogger(__name__)
 
 # jupyterlab
 class JupyterLabModel(Model):

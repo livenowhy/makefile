@@ -409,13 +409,12 @@ class SupersetAppInitializer:  # pylint: disable=too-many-public-methods
         )
 
         # add lzp
-        from superset.views.core import JupyterView
+        from superset.views.extend import JupyterLabView
         appbuilder.add_view(
-            JupyterView,
-            "jupyter",
-            label=__("Jupyterhub"),  # 修改为Jupyterhub
-            # label=__("Jupyter Notebook"),
-            href="/jupyterview/jupyter",
+            JupyterLabView,
+            "jupyterlab",
+            label=__("jupyterlab"),
+            href="/jupyterview/jupyterlab",
             icon='fa-cogs',
             category = "SQL Lab",
             category_label = __("SQL Lab"),

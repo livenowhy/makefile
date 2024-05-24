@@ -1010,12 +1010,3 @@ class FavStar(Model):  # pylint: disable=too-few-public-methods
     class_name = Column(String(50))
     obj_id = Column(Integer)
     dttm = Column(DateTime, default=datetime.utcnow)
-
-# jupyterlab
-
-class JupyterModel(Model):
-    __tablename__ = 'jupyter'
-    type = "table"
-    id = Column(Integer, primary_key=True)
-    name = Column(String(256), nullable=True)
-    info = Column(String(256), nullable=True)

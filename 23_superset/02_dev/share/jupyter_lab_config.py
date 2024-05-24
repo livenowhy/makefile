@@ -1226,4 +1226,4 @@ c.ServerApp.tornado_settings = {
 
 
 # 启动
-# $ jupyter notebook  --ServerApp.tornado_settings='{"headers":{"Content-Security-Policy":"frame-ancestors self *; report-uri /api/security/csp-report"}}' --allow-root --no-browser --ip=0.0.0.0 --port=8888 --NotebookApp.token='' --NotebookApp.password='' --NotebookApp.quit_button=False
+# $ jupyter lab --allow-root  --ServerApp.tornado_settings='{"headers":{"Content-Security-Policy":"frame-ancestors self *; report-uri /api/security/csp-report"}}' --allow-root --no-browser --ip=0.0.0.0 --port=8888 --ServerApp.token='' --ServerApp.password='' --ServerApp.quit_button=False

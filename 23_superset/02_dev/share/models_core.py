@@ -1014,7 +1014,7 @@ class FavStar(Model):  # pylint: disable=too-few-public-methods
 # jupyterlab
 
 class JupyterModel(Model):
-    __tablename__ = 'Jupyter'
+    __tablename__ = 'jupyter'
     type = "table"
     id = Column(Integer, primary_key=True)
     name = Column(String(256), nullable=True)

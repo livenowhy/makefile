@@ -408,11 +408,12 @@ class SupersetAppInitializer:  # pylint: disable=too-many-public-methods
             icon="fa-lock",
         )
 
+        # add lzp
         from superset.views.core import JupyterView
         appbuilder.add_view(
             JupyterView,
             "jupyter",
-            label=__("Jupyterhub"),  #修改为Jupyterhub
+            label=__("Jupyterhub"),  # 修改为Jupyterhub
             # label=__("Jupyter Notebook"),
             href="/jupyterview/jupyter",
             icon='fa-cogs',

@@ -408,6 +408,19 @@ class SupersetAppInitializer:  # pylint: disable=too-many-public-methods
             icon="fa-lock",
         )
 
+        from superset.views.core import JupyterView
+        appbuilder.add_view(
+            JupyterView,
+            "jupyter",
+            label=__("Jupyterhub"),  #修改为Jupyterhub
+            # label=__("Jupyter Notebook"),
+            href="/jupyterview/jupyter",
+            icon='fa-cogs',
+            category = "SQL Lab",
+            category_label = __("SQL Lab"),
+        )
+
+
     def init_app_in_ctx(self) -> None:
         """
         Runs init logic in the context of the app

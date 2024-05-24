@@ -24,8 +24,13 @@ services:
       - /home/lzp/Desktop/makefile/23_superset/02_dev/share/initialization__init__.py:/usr/local/lib/python3.10/site-packages/superset/initialization/__init__.py
 
 
-# sudo docker-compose stop && sudo docker-compose rm -f
 
+# jupyter lab --allow-root  --ip 0.0.0.0
+# jupyter lab --generate-config
+
+# sudo docker-compose stop && sudo docker-compose rm -f
+# superset db migrate
+# superset db upgrade
 
 # cd /usr/local/lib/python3.10/site-packages/superset
 # mkdir jupyterlab

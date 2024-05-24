@@ -182,6 +182,9 @@ c = get_config()  #noqa
 #  Default: False
 # c.ExtensionApp.open_browser = False
 
+# add:lzp 启动服务端时是否打开浏览器 (运行时不打开本地浏览器)
+c.ExtensionApp.open_browser = False
+
 ## Settings that will passed to the server.
 #  Default: {}
 # c.ExtensionApp.settings = {}
@@ -711,6 +714,9 @@ c = get_config()  #noqa
 #  Default: True
 # c.ServerApp.allow_password_change = True
 
+# add:lzp 是否可以通过前端修改密码
+c.ServerApp.allow_password_change = False
+
 ## Allow requests where the Host header doesn't point to a local server
 #  
 #         By default, requests get a 403 forbidden response if the 'Host' header
@@ -729,6 +735,9 @@ c = get_config()  #noqa
 ## Whether to allow the user to run the server as root.
 #  Default: False
 # c.ServerApp.allow_root = False
+
+# add:lzp 允许在root用户下打开程序
+c.ServerApp.allow_root = True
 
 ## Allow unauthenticated access to endpoints without authentication rule.
 #  
@@ -909,6 +918,9 @@ c = get_config()  #noqa
 #  Default: 'localhost'
 # c.ServerApp.ip = 'localhost'
 
+# add:lzp 可访问的IP地址 (允许所有外部IP访问)
+c.ServerApp.ip = '0.0.0.0'
+
 ## Supply extra arguments that will be passed to Jinja environment.
 #  Default: {}
 # c.ServerApp.jinja_environment_options = {}
@@ -1005,6 +1017,9 @@ c = get_config()  #noqa
 #  Default: ''
 # c.ServerApp.notebook_dir = ''
 
+# add:lzp 默认打开的目录路径
+c.ServerApp.notebook_dir = "workspace"
+
 ## Whether to open in a browser after starting.
 #                          The specific browser used is platform dependent and
 #                          determined by the python standard library `webbrowser`
@@ -1025,6 +1040,9 @@ c = get_config()  #noqa
 #  Default: 0
 # c.ServerApp.port = 0
 
+# add:lzp 端口
+c.ServerApp.port = 8888
+
 ## The number of additional ports to try if the specified port is not available
 #  (env: JUPYTER_PORT_RETRIES).
 #  Default: 50
@@ -1044,6 +1062,9 @@ c = get_config()  #noqa
 #  or buttons.
 #  Default: True
 # c.ServerApp.quit_button = True
+
+# add:lzp 前端是否展示退出按钮
+c.ServerApp.quit_button = False
 
 ## DEPRECATED. Use ZMQChannelsWebsocketConnection.rate_limit_window
 #  Default: 0.0
@@ -1111,13 +1132,26 @@ c = get_config()  #noqa
 #  Default: False
 # c.ServerApp.terminals_enabled = False
 
+# add:lzp 是否开启新建终端
+c.ServerApp.terminals_enabled = False
+
 ## DEPRECATED. Use IdentityProvider.token
 #  Default: '<DEPRECATED>'
 # c.ServerApp.token = '<DEPRECATED>'
 
+# add:lzp 去掉密码验证
+c.ServerApp.token = ""
+
 ## Supply overrides for the tornado.web.Application that the Jupyter server uses.
 #  Default: {}
 # c.ServerApp.tornado_settings = {}
+
+# add:lzp 解决跨域问题
+c.ServerApp.tornado_settings = {
+      'headers': {
+            'Content-Security-Policy': "frame-ancestors self *; report-uri /api/security/csp-report",
+      }
+}
 
 ## Whether to trust or not X-Scheme/X-Forwarded-Proto and X-Real-Ip/X-Forwarded-
 #  For headerssent by the upstream reverse proxy. Necessary if the proxy handles
@@ -1189,3 +1223,7 @@ c = get_config()  #noqa
 #          Should be in the form of an HTTP origin: ws[s]://hostname[:port]
 #  Default: ''
 # c.ServerApp.websocket_url = ''
+
+
+# 启动
+# $ jupyter notebook  --ServerApp.tornado_settings='{"headers":{"Content-Security-Policy":"frame-ancestors self *; report-uri /api/security/csp-report"}}' --allow-root --no-browser --ip=0.0.0.0 --port=8888 --NotebookApp.token='' --NotebookApp.password='' --NotebookApp.quit_button=False

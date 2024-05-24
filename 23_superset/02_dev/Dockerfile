@@ -23,6 +23,5 @@ CMD ["/app/run-server.sh"]
 
 
 # sduo docker save -o alpine.tar alpine:latest
-# sudo docker save -o alpine.tar alpine:latest
 # sudo docker save -o superset_lean.tar registry.cn-beijing.aliyuncs.com/livenowhy/superset:lean
 # sudo docker save registry.cn-beijing.aliyuncs.com/livenowhy/superset:lean | gzip > superset_lean.tar.gz

@@ -25,6 +25,7 @@ RUN pip install prophet
 RUN pip install jupyterlab
 
 # jupyter lab --allow-root
+# jupyter lab --generate-config
 
 # RUN apt-get autoremove -y --purge build-essential
 # RUN rm -rf /var/lib/apt/lists/*

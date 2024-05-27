@@ -13,6 +13,7 @@ RUN apt-get install -y --no-install-recommends libecpg-dev
 RUN apt-get install -y --no-install-recommends libldap2-dev
 RUN apt-get install -y --no-install-recommends build-essential
 RUN apt-get install -y --no-install-recommends vim
+RUN apt-get install -y --no-install-recommends npm
 RUN pip install --upgrade setuptools pip
 RUN pip install apache-superset==4.0.0
 RUN pip install mysqlclient

@@ -14,18 +14,7 @@ RUN apt-get install -y --no-install-recommends libldap2-dev
 RUN apt-get install -y --no-install-recommends build-essential
 RUN apt-get install -y --no-install-recommends vim
 RUN apt-get install -y --no-install-recommends npm
-RUN pip install --upgrade setuptools pip
-RUN pip install apache-superset==4.0.0
-RUN pip install mysqlclient
-RUN pip install Pillow
-
-RUN pip install flask_cors
-
-# 预测插件
-RUN pip install prophet
-RUN pip install jupyterlab
 
 # RUN apt-get autoremove -y --purge build-essential
 # RUN rm -rf /var/lib/apt/lists/*
 
-WORKDIR /app

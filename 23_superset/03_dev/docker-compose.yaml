@@ -27,5 +27,3 @@ services:
       - /share/makefile/23_superset/03_dev/share/initialization__init__.py:/usr/local/lib/python3.10/site-packages/superset/initialization/__init__.py
       
 # sudo docker-compose stop && sudo docker-compose rm -f
-
-# http://ubuntu.livenowhy.com:9088/static/assets/images/matplotlib/matplotlib_example.png

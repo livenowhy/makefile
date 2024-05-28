@@ -13,17 +13,19 @@ services:
     extra_hosts:
       - "ubuntu.livenowhy.com:192.168.140.101"
     volumes:
-      - /home/lzp/Desktop/makefile/23_superset/03_dev/superset_config.py:/usr/local/lib/python3.10/site-packages/superset/superset_config.py
-      - /home/lzp/Desktop/makefile/23_superset/03_dev/gunicore_superset.sh:/app/gunicore_superset.sh
-      - /home/lzp/Desktop/makefile/23_superset/03_dev/share/:/app/share/
-      - /home/lzp/Desktop/makefile/23_superset/03_dev/jupyter_lab_config.py:/root/.jupyter/jupyter_lab_config.py
-      - /home/lzp/Desktop/makefile/23_superset/03_dev/jupyter_lab_config.py:/usr/local/lib/python3.10/site-packages/superset/jupyterlab/jupyter_lab_config.py
+      - /share/makefile/23_superset/03_dev/superset_config.py:/usr/local/lib/python3.10/site-packages/superset/superset_config.py
+      - /share/makefile/23_superset/03_dev/gunicore_superset.sh:/app/gunicore_superset.sh
+      - /share/makefile/23_superset/03_dev/share/:/app/share/
+      - /share/makefile/23_superset/03_dev/jupyter_lab_config.py:/root/.jupyter/jupyter_lab_config.py
+      - /share/makefile/23_superset/03_dev/jupyter_lab_config.py:/usr/local/lib/python3.10/site-packages/superset/jupyterlab/jupyter_lab_config.py
 
-      - /home/lzp/Desktop/makefile/23_superset/03_dev/share/jupyterlab.html:/usr/local/lib/python3.10/site-packages/superset/templates/jupyterlab.html
-      - /home/lzp/Desktop/makefile/23_superset/03_dev/share/views_extend.py:/usr/local/lib/python3.10/site-packages/superset/views/extend.py
-      - /home/lzp/Desktop/makefile/23_superset/03_dev/share/views__init__.py:/usr/local/lib/python3.10/site-packages/superset/views/__init__.py
-      - /home/lzp/Desktop/makefile/23_superset/03_dev/share/models_extend.py:/usr/local/lib/python3.10/site-packages/superset/models/extend.py
-      - /home/lzp/Desktop/makefile/23_superset/03_dev/share/models__init__.py:/usr/local/lib/python3.10/site-packages/superset/models/__init__.py
-      - /home/lzp/Desktop/makefile/23_superset/03_dev/share/initialization__init__.py:/usr/local/lib/python3.10/site-packages/superset/initialization/__init__.py
+      - /share/makefile/23_superset/03_dev/share/jupyterlab.html:/usr/local/lib/python3.10/site-packages/superset/templates/jupyterlab.html
+      - /share/makefile/23_superset/03_dev/share/views_extend.py:/usr/local/lib/python3.10/site-packages/superset/views/extend.py
+      - /share/makefile/23_superset/03_dev/share/views__init__.py:/usr/local/lib/python3.10/site-packages/superset/views/__init__.py
+      - /share/makefile/23_superset/03_dev/share/models_extend.py:/usr/local/lib/python3.10/site-packages/superset/models/extend.py
+      - /share/makefile/23_superset/03_dev/share/models__init__.py:/usr/local/lib/python3.10/site-packages/superset/models/__init__.py
+      - /share/makefile/23_superset/03_dev/share/initialization__init__.py:/usr/local/lib/python3.10/site-packages/superset/initialization/__init__.py
       
 # sudo docker-compose stop && sudo docker-compose rm -f
+
+# http://ubuntu.livenowhy.com:9088/static/assets/images/matplotlib/matplotlib_example.png

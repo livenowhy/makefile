@@ -10,16 +10,17 @@ RUN pip install mysqlclient
 RUN pip install Pillow
 RUN pip install flask_cors
 
-
-RUN pip install jupyterlab
 RUN pip install PyMySQL
 
 # 代码补全
-RUN pip install "jupyterlab>=4.0.0,<5.0.0a0" jupyterlab-lsp
+RUN pip install jupyterlab
+RUN pip install jupyterlab-lsp
 RUN pip install "python-lsp-server[all]"
-RUN pip install jupyterlab-language-pack-zh-CN
-RUN pip install jupyterlab-kite
-RUN pip install ipykernel
+# RUN jupyter labextension install @krassowski/jupyterlab-lsp
+# RUN pip install jupyterlab-language-pack-zh-CN
+# RUN pip install jupyterlab-kite
+# RUN pip install ipykernel
+
 
 # 预测插件
 RUN pip install prophet

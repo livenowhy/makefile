@@ -59,3 +59,8 @@ WTF_CSRF_TIME_LIMIT = 60 * 60 * 24 * 365
 # Set this API key to enable Mapbox visualizations
 # 接口密钥用来启用 Mapbox 可视化
 MAPBOX_API_KEY = ''
+
+
+# CSP
+# https://superset.apache.org/docs/security/#content-security-policy-csp
+TALISMAN_ENABLED = False

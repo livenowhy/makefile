@@ -6,14 +6,15 @@ import pymysql as pmq
 
 
 def fetch_img_name():
-    imgid = int(time.time() * 1000)
+    imgid = int(time.time())
     imgid_path = '/usr/local/lib/python3.10/site-packages/superset/static/assets/images/matplotlib'
     img_name = '{imgid_path}/{imgid}.png'.format(imgid_path=imgid_path, imgid=imgid)
     return img_name, imgid
 
 class MysqlTools(object):
-    def __init__(self, host, user, password, database) -> None:
+    def __init__(self, host, port, user, password, database) -> None:
         self.host = host
+        self.port = port
         self.user = user
         self.password = password
         self.database = database
@@ -25,12 +26,11 @@ class MysqlTools(object):
             connection = pmq.connect(
                 host=self.host,
                 user=self.user,
+                port=self.port,
                 password=self.password,
-                database=self.database
+                db=self.database
             )
-            if connection.is_connected():
-                print("连接成功！")
-                return connection
+            return connection
         except Exception as e:
             print("连接失败：", e)
             return None
@@ -39,14 +39,13 @@ class MysqlTools(object):
         """
         插入数据
         """
-        sql = "INSERT INTO superse_image (width, height, imgid, atype) VALUES (%s, %s, %s, %s)"
-        imginfo = [
-            {
+        sql = "INSERT INTO superse_image (width, height, imgid, atype) VALUES (%(width)s, %(height)s, %(imgid)s, %(atype)s)"
+        imginfo = {
                 'width': width, 'height': height, 'imgid': imgid, 'atype': atype
             }
-        ]
+        
         try:
-            self.cursor.executemany(sql, imginfo)
+            self.cursor.execute(sql, imginfo)
             self.connection.commit()
             print("数据插入成功")
         except Exception as e:
@@ -90,7 +89,7 @@ class MatplotlibBase(object):
         # 关闭图像窗口（可选）
         plt.close()
 
-        mt = MysqlTools(host='192.168.140.101', user='root', password='Qp9tb869zXu4kh7Gm9R', database='phoenix')
+        mt = MysqlTools(host='192.168.140.101', port=8306, user='root', password='Qp9tb869zXu4kh7Gm9R', database='phoenix')
         mt.insert_data(height=300, width=300, imgid=imgid, atype='regression')
     
 

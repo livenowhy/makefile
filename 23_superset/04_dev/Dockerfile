@@ -24,6 +24,10 @@ COPY --chmod=755 run-server.sh        /app/run-server.sh
 CMD ["/app/run-server.sh"]
 
 
+# ADD django.ini /etc/supervisord.d/django.ini
+# ADD run.sh /root/run.sh
+# ENTRYPOINT ["/bin/bash", "/root/run.sh"]
+
 # sduo docker save -o alpine.tar alpine:latest
 # sudo docker save -o superset_lean.tar registry.cn-beijing.aliyuncs.com/livenowhy/superset:lean
 # sudo docker save registry.cn-beijing.aliyuncs.com/livenowhy/superset:lean | gzip > superset_lean.tar.gz

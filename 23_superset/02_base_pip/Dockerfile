@@ -9,9 +9,12 @@ RUN pip install mysqlclient
 RUN pip install Pillow
 RUN pip install flask_cors
 RUN pip install PyMySQL
-RUN pip install prophet
 RUN pip install ipython
 
+# 预测插件
+RUN pip install prophet
+
+# supervisor 管理服务
 RUN pip3 install supervisor
 RUN echo_supervisord_conf > /etc/supervisord.conf
 RUN echo '[include]' >> /etc/supervisord.conf
@@ -28,9 +31,5 @@ RUN pip install "python-lsp-server[all]"
 # RUN pip install jupyterlab-language-pack-zh-CN
 # RUN pip install jupyterlab-kite
 # RUN pip install ipykernel
-
-# 预测插件
 # pip install -i https://pypi.tuna.tsinghua.edu.cn/simple  jupyterlab-kite
-
-
 WORKDIR /app

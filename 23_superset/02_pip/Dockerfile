@@ -11,6 +11,8 @@ RUN pip install Pillow
 RUN pip install flask_cors
 
 RUN pip install PyMySQL
+RUN pip install prophet
+RUN pip install ipython
 
 # 代码补全
 RUN pip install jupyterlab
@@ -21,10 +23,7 @@ RUN pip install "python-lsp-server[all]"
 # RUN pip install jupyterlab-kite
 # RUN pip install ipykernel
 
-
 # 预测插件
-RUN pip install prophet
-
 # pip install -i https://pypi.tuna.tsinghua.edu.cn/simple  jupyterlab-kite
 
 

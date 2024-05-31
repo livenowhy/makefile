@@ -1,4 +1,4 @@
-FROM registry.cn-beijing.aliyuncs.com/livenowhy/superset:pip
+FROM registry.cn-beijing.aliyuncs.com/livenowhy/superset:extendpip
 
 LABEL description="superset 镜像, 基于 superset 前置镜像"
 

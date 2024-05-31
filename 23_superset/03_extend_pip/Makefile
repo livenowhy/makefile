@@ -1,6 +1,6 @@
 all: push
 
-TAG = pip
+TAG = extendpip
 PREFIX = registry.cn-beijing.aliyuncs.com
 IMAGE_NAME = livenowhy/superset
 STATUS = 已构建   # 状态: 已自动构建, 未构建

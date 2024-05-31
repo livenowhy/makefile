@@ -12,12 +12,11 @@ check_server_pid()
 start_server()
 {
     gunicorn \
+    --workers 5 \
+    --timeout 120 \
     --bind 0.0.0.0:8088 \
     --access-logfile access.log \
     --error-logfile error.log \
-    --workers 5 \
-    --timeout 120 \
-    --worker-connections=1000 \
     "${SERVER_APP_NAME}" \
     --daemon
     

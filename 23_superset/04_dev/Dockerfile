@@ -16,7 +16,7 @@ ADD extend/jupyter_lab_config.py      /root/.jupyter/jupyter_lab_config.py
 ADD extend/jupyter_lab_config.py      /usr/local/lib/python3.10/site-packages/superset/jupyterlab/jupyter_lab_config.py
 
 
-ADD superset_config.py /usr/local/lib/python3.10/site-packages/superset/superset_config.py
+ADD superset_config.py               /usr/local/lib/python3.10/site-packages/superset/superset_config.py
 RUN mkdir -p /usr/local/lib/python3.10/site-packages/superset/static/assets/images/matplotlib
 EXPOSE 8088
 EXPOSE 8888

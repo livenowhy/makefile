@@ -64,3 +64,12 @@ MAPBOX_API_KEY = ''
 # CSP
 # https://superset.apache.org/docs/security/#content-security-policy-csp
 TALISMAN_ENABLED = False
+
+#enable filters
+FEATURE_FLAGS = {
+    "DASHBOARD_FILTERS_EXPERIMENTAL": True, 
+    "DASHBOARD_NATIVE_FILTERS_SET": True, 
+    "DASHBOARD_NATIVE_FILTERS": True, 
+    "DASHBOARD_CROSS_FILTERS": True, 
+    "ENABLE_TEMPLATE_PROCESSING": True
+    }

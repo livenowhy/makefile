@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
+supervisord -c /etc/supervisord.conf
+
 while true
 do
     echo "sleep"
-    sleep 10
+    sleep sleep 60
 done

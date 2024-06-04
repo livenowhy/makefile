@@ -40,5 +40,5 @@ RUN superset superset init
 CMD ["/app/run-server.sh"]
 # ENTRYPOINT ["/bin/bash", "/app/run-server.sh"]
 # sduo docker save -o alpine.tar alpine:latest
-# sudo docker save -o superset_lean.tar registry.cn-beijing.aliyuncs.com/livenowhy/superset:lean
+# sudo docker save -o superset_dev.tar registry.cn-beijing.aliyuncs.com/livenowhy/superset:dev
 # sudo docker save registry.cn-beijing.aliyuncs.com/livenowhy/superset:lean | gzip > superset_lean.tar.gz

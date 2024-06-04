@@ -80,6 +80,8 @@
     $ superset db migrate
     $ superset db upgrade
     $ superset init        # 更新权限
+    
+    superset fab create-admin --username admin --firstname Superset --lastname Admin --email admin@superset.com --password admin1234
 
 ### 7. 启动 jupyterlab
 

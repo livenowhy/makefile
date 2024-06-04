@@ -11,7 +11,7 @@ services:
       - 8888:8888
     mem_limit: 8g
     extra_hosts:
-      - "ubuntu.livenowhy.com:192.168.7.101"
+      - "ubuntu.livenowhy.com:192.168.43.167"
     volumes:
       - /share/makefile/23_superset/04_dev/superset_config.py:/usr/local/lib/python3.10/site-packages/superset/superset_config.py
       - /share/makefile/23_superset/04_dev/:/app/04_dev/

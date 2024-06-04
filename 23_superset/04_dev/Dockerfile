@@ -32,8 +32,9 @@ ENV SUPERSET_CONFIG_PATH=/usr/local/lib/python3.10/site-packages/superset/supers
 
 COPY --chmod=755 gunicore_superset.sh /app/gunicore_superset.sh
 COPY --chmod=755 run-server.sh        /app/run-server.sh
-ADD superset.ini /etc/supervisord.d/superset.ini
-ADD jupyter.ini /etc/supervisord.d/jupyter.ini
+ADD supervisord/superset.ini /etc/supervisord.d/superset.ini
+ADD supervisord/jupyter.ini /etc/supervisord.d/jupyter.ini
+ADD supervisord/codeserver.ini /etc/supervisord.d/codeserver.ini
 
 RUN superset superset init
 

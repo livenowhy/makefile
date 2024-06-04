@@ -13,6 +13,7 @@ ADD extend/views__init__.py           /usr/local/lib/python3.10/site-packages/su
 ADD extend/models_extend.py           /usr/local/lib/python3.10/site-packages/superset/models/extend.py
 ADD extend/models__init__.py          /usr/local/lib/python3.10/site-packages/superset/models/__init__.py
 ADD extend/jupyter_lab_config.py      /root/.jupyter/jupyter_lab_config.py
+ADD extend/config.yaml /root/.config/code-server/config.yaml
 ADD extend/jupyter_lab_config.py      /usr/local/lib/python3.10/site-packages/superset/jupyterlab/jupyter_lab_config.py
 
 

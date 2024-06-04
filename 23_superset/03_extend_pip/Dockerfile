@@ -14,7 +14,5 @@ RUN code-server --install-extension Yseop.vscode-yseopml
 RUN code-server --install-extension ecmel.vscode-html-css
 RUN code-server --install-extension abusaidm.html-snippets
 
-cweijan.vscode-mysql-client2
-
 # RUN code-server --install-extension Kelvin.vscode-sshfs
 # 启动命令: code-server

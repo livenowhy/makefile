@@ -15,26 +15,25 @@ ADD extend/models__init__.py          /usr/local/lib/python3.10/site-packages/su
 ADD extend/jupyter_lab_config.py      /root/.jupyter/jupyter_lab_config.py
 ADD extend/config.yaml                /root/.config/code-server/config.yaml
 ADD extend/jupyter_lab_config.py      /usr/local/lib/python3.10/site-packages/superset/jupyterlab/jupyter_lab_config.py
+ADD extend/superset_config.py         /usr/local/lib/python3.10/site-packages/superset/superset_config.py
 
+ADD supervisord/superset.ini /etc/supervisord.d/superset.ini
+ADD supervisord/jupyter.ini /etc/supervisord.d/jupyter.ini
+ADD supervisord/codeserver.ini /etc/supervisord.d/codeserver.ini
 
-ADD superset_config.py               /usr/local/lib/python3.10/site-packages/superset/superset_config.py
 RUN mkdir -p /usr/local/lib/python3.10/site-packages/superset/static/assets/images/matplotlib
+
 EXPOSE 8088
 EXPOSE 8888
 EXPOSE 8080
 
 ENV LANG=C.UTF-8
 ENV LC_ALL=C.UTF-8
-ENV FLASK_APP="superset.app:create_app()" 
-
+ENV FLASK_APP="superset.app:create_app()"
 ENV FLASK_AP=superset
 ENV SUPERSET_CONFIG_PATH=/usr/local/lib/python3.10/site-packages/superset/superset_config.py
 
-COPY --chmod=755 gunicore_superset.sh /app/gunicore_superset.sh
 COPY --chmod=755 run-server.sh        /app/run-server.sh
-ADD supervisord/superset.ini /etc/supervisord.d/superset.ini
-ADD supervisord/jupyter.ini /etc/supervisord.d/jupyter.ini
-ADD supervisord/codeserver.ini /etc/supervisord.d/codeserver.ini
 
 RUN superset superset init
 

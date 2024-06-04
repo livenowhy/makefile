@@ -11,3 +11,5 @@ RUN code-server --install-extension tht13.python
 RUN code-server --install-extension magicstack.MagicPython
 RUN code-server --install-extension EricSia.pythonsnippets3
 RUN code-server --install-extension Yseop.vscode-yseopml
+
+# 启动命令: code-server

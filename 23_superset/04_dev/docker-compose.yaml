@@ -9,6 +9,7 @@ services:
     ports:
       - 9088:8088
       - 8888:8888
+      - 8080:8080
     mem_limit: 8g
     extra_hosts:
       - "ubuntu.livenowhy.com:192.168.43.167"

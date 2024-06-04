@@ -4,8 +4,6 @@ LABEL description="superset 镜像, 基于 superset 前置镜像"
 
 WORKDIR /app
 
-RUN curl -fsSL https://code-server.dev/install.sh | sh
-
 # jupyter 扩展
 RUN mkdir -p /usr/local/lib/python3.10/site-packages/superset/jupyterlab/
 ADD extend/initialization__init__.py  /usr/local/lib/python3.10/site-packages/superset/initialization/__init__.py
@@ -22,6 +20,7 @@ ADD superset_config.py               /usr/local/lib/python3.10/site-packages/sup
 RUN mkdir -p /usr/local/lib/python3.10/site-packages/superset/static/assets/images/matplotlib
 EXPOSE 8088
 EXPOSE 8888
+EXPOSE 8080
 
 ENV LANG=C.UTF-8
 ENV LC_ALL=C.UTF-8

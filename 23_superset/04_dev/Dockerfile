@@ -4,6 +4,8 @@ LABEL description="superset 镜像, 基于 superset 前置镜像"
 
 WORKDIR /app
 
+RUN curl -fsSL https://code-server.dev/install.sh | sh
+
 # jupyter 扩展
 RUN mkdir -p /usr/local/lib/python3.10/site-packages/superset/jupyterlab/
 ADD extend/initialization__init__.py  /usr/local/lib/python3.10/site-packages/superset/initialization/__init__.py

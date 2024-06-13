@@ -5,6 +5,7 @@ services:
     container_name: superset
     user: root
     network_mode: "bridge"
+    privileged: true
     restart: always
     ports:
       - 9088:8088
@@ -14,11 +15,10 @@ services:
     extra_hosts:
       - "ubuntu.livenowhy.com:192.168.43.167"
     volumes:
+      - /share/superset:/usr/local/lib/python3.10/site-packages/superset
       - ./run-server.sh:/app/run-server.sh
       - ./supervisord/superset.ini:/etc/supervisord.d/superset.ini
       - ./supervisord/jupyter.ini:/etc/supervisord.d/jupyter.ini
       - ./supervisord/codeserver.ini:/etc/supervisord.d/codeserver.ini
-      - /share/makefile/23_superset/04_dev/extend/superset_config.py:/usr/local/lib/python3.10/site-packages/superset/superset_config.py
-      - /share/makefile/23_superset/04_dev/:/app/04_dev/
 
 # sudo docker-compose stop && sudo docker-compose rm -f

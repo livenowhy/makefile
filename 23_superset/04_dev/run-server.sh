@@ -5,5 +5,5 @@ supervisord -c /etc/supervisord.conf
 while true
 do
     echo "sleep"
-    sleep sleep 60
+    sleep 60
 done

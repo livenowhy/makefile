@@ -28,7 +28,7 @@ ENV SUPERSET_CONFIG_PATH=/usr/local/lib/python3.10/site-packages/superset/supers
 ADD extend/jupyter_lab_config.py      /root/.jupyter/jupyter_lab_config.py
 ADD extend/config.yaml                /root/.config/code-server/config.yaml
 
-RUN superset init
+# RUN superset init
 
 CMD ["/app/run-server.sh"]
 # ENTRYPOINT ["/bin/bash", "/app/run-server.sh"]

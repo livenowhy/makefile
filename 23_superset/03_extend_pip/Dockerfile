@@ -3,6 +3,7 @@ FROM registry.cn-beijing.aliyuncs.com/livenowhy/superset:basepip
 LABEL description="superset pip 镜像, 基于 superset:basepip"
 
 RUN pip install yapf flake8
+RUN pip install mlflow
 RUN curl -fsSL https://code-server.dev/install.sh | sh
 
 RUN code-server --install-extension ms-python.python

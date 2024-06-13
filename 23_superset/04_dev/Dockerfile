@@ -17,15 +17,18 @@ ADD extend/config.yaml                /root/.config/code-server/config.yaml
 ADD extend/jupyter_lab_config.py      /usr/local/lib/python3.10/site-packages/superset/jupyterlab/jupyter_lab_config.py
 ADD extend/superset_config.py         /usr/local/lib/python3.10/site-packages/superset/superset_config.py
 
-ADD supervisord/superset.ini /etc/supervisord.d/superset.ini
-ADD supervisord/jupyter.ini /etc/supervisord.d/jupyter.ini
-ADD supervisord/codeserver.ini /etc/supervisord.d/codeserver.ini
-
 RUN mkdir -p /usr/local/lib/python3.10/site-packages/superset/static/assets/images/matplotlib
 
 EXPOSE 8088
 EXPOSE 8888
 EXPOSE 8080
+EXPOSE 8081
+EXPOSE 8082
+EXPOSE 8083
+EXPOSE 8084
+EXPOSE 8085
+EXPOSE 8086
+EXPOSE 8087
 
 ENV LANG=C.UTF-8
 ENV LC_ALL=C.UTF-8
@@ -33,12 +36,8 @@ ENV FLASK_APP="superset.app:create_app()"
 ENV FLASK_AP=superset
 ENV SUPERSET_CONFIG_PATH=/usr/local/lib/python3.10/site-packages/superset/superset_config.py
 
-COPY --chmod=755 run-server.sh        /app/run-server.sh
-
-RUN superset superset init
+RUN superset init
 
 CMD ["/app/run-server.sh"]
 # ENTRYPOINT ["/bin/bash", "/app/run-server.sh"]
-# sduo docker save -o alpine.tar alpine:latest
 # sudo docker save -o superset_dev.tar registry.cn-beijing.aliyuncs.com/livenowhy/superset:dev
-# sudo docker save registry.cn-beijing.aliyuncs.com/livenowhy/superset:lean | gzip > superset_lean.tar.gz

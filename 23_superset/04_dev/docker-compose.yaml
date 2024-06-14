@@ -23,5 +23,6 @@ services:
       - ./supervisord/jupyter.ini:/etc/supervisord.d/jupyter.ini
       - ./supervisord/codeserver.ini:/etc/supervisord.d/codeserver.ini
       - ./supervisord/mlflow.ini:/etc/supervisord.d/mlflow.ini
+      - /share/jupyter:/app/jupyter
 
 # sudo docker-compose stop && sudo docker-compose rm -f

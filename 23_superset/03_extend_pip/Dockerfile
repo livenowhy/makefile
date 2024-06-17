@@ -16,5 +16,10 @@ RUN code-server --install-extension Yseop.vscode-yseopml
 RUN code-server --install-extension ecmel.vscode-html-css
 RUN code-server --install-extension abusaidm.html-snippets
 
+RUN pip install keras tensorflow hyperopt keras-bert
+
 # RUN code-server --install-extension Kelvin.vscode-sshfs
 # 启动命令: code-server
+
+# AttributeError: module 'keras.src.backend' has no attribute 'convert_to_numpy'
+# import tensorflow.keras as keras

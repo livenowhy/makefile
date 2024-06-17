@@ -16,7 +16,7 @@ services:
       - 8084:8084
       - 8085:8085
     extra_hosts: 
-      - "185.199.108.133 raw.githubusercontent.com"
+      - "raw.githubusercontent.com:185.199.108.133"
     mem_limit: 8g
     volumes:
       - /share/superset:/usr/local/lib/python3.10/site-packages/superset

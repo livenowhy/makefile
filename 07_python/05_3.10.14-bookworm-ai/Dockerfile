@@ -21,19 +21,17 @@ RUN pip install --no-cache-dir vanna==0.5.5
 RUN pip install --no-cache-dir prophet
 
 # 4. pycaret
-RUN pip install --no-cache-dir yapf
+RUN pip install --no-cache-dir pycaret==3.3.2
 RUN pip install --no-cache-dir pycaret[full]
+RUN pip install --no-cache-dir yapf
 RUN pip install --no-cache-dir keras
 RUN pip install --no-cache-dir keras-bert
 RUN pip install --no-cache-dir tensorflow
 RUN pip install --no-cache-dir hyperopt
-
-#
-RUN pip install --no-cache-dir mlflow
-RUN pip install --no-cache-dir pycaret[full]
-
+RUN pip install --no-cache-dir vanna
+RUN pip install --no-cache-dir 'shillelagh[all]'
 
 ADD jupyter_lab_config.py      /root/.jupyter/jupyter_lab_config.py
-# docker save -o python_crewai.tar registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-django-crewai
 
+# docker save -o python_crewai.tar registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-django-crewai
 # sudo docker save -o python_basepip.tar registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-basepip

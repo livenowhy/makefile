@@ -24,6 +24,9 @@ RUN pip install --no-cache-dir tornado==6.3.3
 RUN pip install --no-cache-dir tzdata==2024.1
 RUN pip install --no-cache-dir bs4==0.0.2
 RUN pip install --no-cache-dir pytest==8.3.2
+RUN pip install --no-cache-dir flower
+RUN pip install --no-cache-dir flasgger
+RUN pip install --no-cache-dir flake8
 
 # 2. flask
 RUN pip install --no-cache-dir Flask==2.3.3
@@ -31,29 +34,5 @@ RUN pip install --no-cache-dir Flask-AppBuilder==4.5.0
 RUN pip install --no-cache-dir Flask-Cors==4.0.1
 RUN pip install --no-cache-dir flask-restful-swagger-2
 
-
-RUN pip install --no-cache-dir pycaret==3.3.2
-RUN pip install --no-cache-dir flower
-RUN pip install --no-cache-dir flasgger
-
 # registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-django
 # pip install -i https://pypi.tuna.tsinghua.edu.cn/simple  jupyterlab-kite
-
-#################################################
-
-
-# 2. base pip
-RUN pip install --no-cache-dir apache-superset==4.0.0
-RUN pip install --no-cache-dir vanna
-RUN pip install --no-cache-dir Pillow
-
-RUN pip install --no-cache-dir prophet
-RUN pip install --no-cache-dir yapf
-RUN pip install --no-cache-dir flake8
-RUN pip install --no-cache-dir mlflow==2.14.1
-RUN pip install --no-cache-dir pycaret[full]
-RUN pip install --no-cache-dir keras
-RUN pip install --no-cache-dir keras-bert
-RUN pip install --no-cache-dir tensorflow
-RUN pip install --no-cache-dir hyperopt
-RUN pip install --no-cache-dir 'shillelagh[all]'

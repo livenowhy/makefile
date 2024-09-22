@@ -16,7 +16,7 @@ RUN pip install --no-cache-dir jupyterlab
 RUN pip install --no-cache-dir jupyterlab-lsp
 RUN pip install --no-cache-dir "python-lsp-server[all]"
 
-# 3. base pip
+# 3. superset
 RUN pip install --no-cache-dir apache-superset==4.0.0
 RUN pip install --no-cache-dir vanna==0.5.5
 

@@ -1,6 +1,6 @@
 FROM registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-django
 
-LABEL description="django crewai 运行镜像; 基于 3.10.14-bookworm-django"
+LABEL description="django ai 运行镜像; 基于 3.10.14-bookworm-django"
 
 # 1. crewai 配置
 RUN pip install --no-cache-dir crewai

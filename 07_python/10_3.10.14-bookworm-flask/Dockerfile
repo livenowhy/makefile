@@ -20,7 +20,4 @@ RUN pip install --no-cache-dir flask-restful-swagger-2
 RUN pip install --no-cache-dir PyMySQL
 RUN pip install --no-cache-dir mysqlclient
 
-RUN apt-get autoremove -y --purge build-essential
-RUN rm -rf /var/lib/apt/lists/*
-
 # registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-flask

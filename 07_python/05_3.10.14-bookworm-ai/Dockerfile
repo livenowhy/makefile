@@ -2,18 +2,18 @@ FROM registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-django
 
 LABEL description="django ai 运行镜像; 基于 3.10.14-bookworm-django"
 
-# 1. crewai 配置
+# 1. 代码补全
+RUN pip install --no-cache-dir jupyterlab
+RUN pip install --no-cache-dir jupyterlab-lsp
+RUN pip install --no-cache-dir "python-lsp-server[all]"
+
+# 2. crewai 配置
 RUN pip install --no-cache-dir crewai
 RUN pip install --no-cache-dir crewai-tools
 RUN pip install --no-cache-dir duckduckgo_search
 RUN pip install --no-cache-dir langchain
 RUN curl -fsSL https://ollama.com/install.sh | sh
 RUN pip install --no-cache-dir langchain-community
-
-# 2. 代码补全
-RUN pip install --no-cache-dir jupyterlab
-RUN pip install --no-cache-dir jupyterlab-lsp
-RUN pip install --no-cache-dir "python-lsp-server[all]"
 
 # 3. superset; prophet -> superset 预测插件
 RUN pip install --no-cache-dir apache-superset==4.0.0

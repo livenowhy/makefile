@@ -31,4 +31,8 @@ RUN pip install --no-cache-dir keras-bert
 RUN pip install --no-cache-dir tensorflow
 RUN pip install --no-cache-dir hyperopt
 
+#
+RUN pip install --no-cache-dir mlflow
+RUN pip install --no-cache-dir pycaret[full]
+
 # docker save -o python_crewai.tar registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-django-crewai

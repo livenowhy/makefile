@@ -13,8 +13,4 @@ RUN pip install --no-cache-dir langchain-community
 # RUN pip install django-celery
 # RUN pip install django-redis
 
-# RUN apt-get autoremove -y --purge build-essential
-# RUN rm -rf /var/lib/apt/lists/*
-# registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-django-crewai
-
 # docker save -o python_crewai.tar registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-django-crewai

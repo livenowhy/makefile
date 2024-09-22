@@ -1,6 +1,6 @@
-FROM registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-dev
+FROM registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-codeserver
 
-LABEL description="django 运行镜像; 基于 python:3.10.14-bookworm-dev"
+LABEL description="django 运行镜像; 基于 python:3.10.14-bookworm-codeserver"
 
 # 1. django 普通配置
 RUN pip install --no-cache-dir pandas==2.1.4
@@ -24,5 +24,6 @@ RUN pip install --no-cache-dir tornado==6.3.3
 RUN pip install --no-cache-dir tzdata==2024.1
 RUN pip install --no-cache-dir bs4==0.0.2
 RUN pip install --no-cache-dir pytest==8.3.2
+
 
 # registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-django

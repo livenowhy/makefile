@@ -3,6 +3,12 @@
     https://cr.console.aliyun.com/cn-beijing/instance/repositories
     docker login --username=hi35608059@aliyun.com registry.cn-beijing.aliyuncs.com
 
+## 代码存放位置
+    
+    https://codeup.aliyun.com/
+    git clone git@codeup.aliyun.com:666f9ca829ecbe2305351563/makefile.git
+
+
 ## 采用阿里云自动构建
 
     注意：构建上下文目录 (去除makefile路径, 即 /makefile/01_alpine/3.16/ -> /01_alpine/3.16/)

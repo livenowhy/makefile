@@ -1,0 +1,41 @@
+version: '3.3'
+services:
+  superset:
+    image: registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-superset
+    container_name: superset
+    user: root
+    network_mode: "bridge"
+    privileged: true
+    restart: always
+    environment:
+      LANG: "C.UTF-8"
+      LC_ALL: "C.UTF-8"
+      FLASK_APP: "superset.app:create_app()"
+      FLASK_AP: "superset"
+      SUPERSET_CONFIG_PATH: "/usr/local/lib/python3.10/site-packages/superset/superset_config.py"
+    ports:
+      - 9088:8088  # superset
+      - 8888:8888  # jupyter
+      - 8088:8080  # codeserver
+    extra_hosts: 
+      - "raw.githubusercontent.com:185.199.108.133"
+    mem_limit: 8g
+    volumes:
+      - /share/superset:/usr/local/lib/python3.10/site-packages/superset     # 代码
+      - ../supervisord/superset.ini:/etc/supervisord.d/superset.ini
+      - ../supervisord/jupyter.ini:/etc/supervisord.d/jupyter.ini
+      - ../supervisord/codeserver.ini:/etc/supervisord.d/codeserver.ini
+      - ../supervisord/gunicore_superset.sh:/etc/supervisord.d/gunicore_superset.sh
+      - ../run-server.sh:/share/run-server.sh
+      - /bigdata/jupyter:/share/jupyter
+
+# docker-compose stop && docker-compose rm -f
+# docker-compose up -d
+
+# 创建 Jupyter 文件夹
+# mkdir -p /bigdata/jupyter
+# chmod -R a+wr /bigdata/jupyter
+
+# 创建 mlflow 文件夹
+# mkdir -p /bigdata/mlflow
+# chmod -R a+wr /bigdata/mlflow

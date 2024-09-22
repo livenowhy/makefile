@@ -30,3 +30,7 @@ chmod -R a+wr /bigdata/jenkins
 
 mkdir -p /bigdata/jenkinshome/
 chmod -R a+wr /bigdata/jenkinshome/
+
+# 创建 mlflow 文件夹
+mkdir -p /bigdata/mlflow
+chmod -R a+wr /bigdata/mlflow

@@ -1,0 +1,56 @@
+version: '3.3'
+services:
+
+  # redis:
+  #   image: registry.cn-beijing.aliyuncs.com/livenowhy/redis:6.0.base
+  #   container_name: db_redis
+  #   network_mode: "bridge"
+  #   restart: always
+  #   ports:
+  #     - 6379:6379
+      
+  mlops:
+    image: registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-flask
+    container_name: mlops
+    user: root
+    network_mode: "bridge"
+    privileged: true
+    restart: always
+    ports:
+      - 8090:8090  # mlops
+      - 8091:5432  # flower
+    environment:
+      LANG: "C.UTF-8"
+      LC_ALL: "C.UTF-8"
+    # extra_hosts: 
+    #   - "raw.githubusercontent.com:185.199.108.133"
+    mem_limit: 8g
+    volumes:
+      - ../supervisord/mlops.ini:/etc/supervisord.d/mlops.ini
+      - ../supervisord/flower.ini:/etc/supervisord.d/flower.ini
+      - ../supervisord/mlopsworker.ini:/etc/supervisord.d/mlopsworker.ini
+      - ../supervisord/mlops.sh:/share/mlops.sh
+      - /bigdata/mlflow:/share/mlflow
+      - /share/mlops:/share/mlops
+      - ../run-server.sh:/share/run-server.sh
+
+  mlflow:
+    image: registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-mlflow
+    container_name: mlflow
+    user: root
+    network_mode: "bridge"
+    privileged: true
+    restart: always
+    ports:
+      - 8082:8082  # mlflow
+    environment:
+      LANG: "C.UTF-8"
+      LC_ALL: "C.UTF-8"
+    mem_limit: 8g
+    volumes:
+      - ../supervisord/mlflow.ini:/etc/supervisord.d/mlflow.ini
+      - /bigdata/mlflow:/share/mlflow
+      - ../run-server.sh:/share/run-server.sh
+
+# docker-compose -f docker-compose-mlops.yaml stop && docker-compose -f docker-compose-mlops.yaml rm -f
+# docker-compose -f docker-compose-mlops.yaml up -d

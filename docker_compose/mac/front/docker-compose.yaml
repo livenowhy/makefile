@@ -1,0 +1,77 @@
+version: '3.3'
+services:
+  mysql8:
+    image: registry.cn-beijing.aliyuncs.com/livenowhy/mysql:8.0-debian
+    container_name: mysql8
+    networks: 
+      - macnetworks
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - 8306:3306
+    volumes:
+      - /Users/zpliu/Desktop/bigdata/mysql8:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: "Qp9tb869zXu4kh7Gm9R"
+
+  agentops:
+    image: registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-django-crewai
+    container_name: agentops
+    networks:
+      - macnetworks
+    restart: always
+    links:
+      - mysql8
+    ports:
+      - 8000:8000
+      - 8001:8001
+      - 8002:8002
+      - 8003:8003
+      - 8004:8004
+      - 8005:8005
+      - 8006:8006
+      - 8007:8007
+      - 8008:8008
+      - 8022:22
+    # 自定义 hosts 配置
+    depends_on:
+      - mysql8
+    volumes:
+      - /Users/zpliu/Desktop/share/agentops/agentops.ini:/etc/supervisord.d/agentops.ini
+      - /Users/zpliu/Desktop/share/plib:/share/plib
+      - /Users/zpliu/Desktop/share/agentops:/share/agentops
+      - /Users/zpliu/Desktop/share/makefile/docker_compose/mac/front/id_rsa:/root/.ssh/id_rsa
+      - /Users/zpliu/Desktop/share/makefile/docker_compose/mac/front/id_rsa.pub:/root/.ssh/id_rsa.pub
+      - /Users/zpliu/Desktop/share/makefile/docker_compose/mac/front/authorized_keys:/root/.ssh/authorized_keys
+
+  front:
+    image: registry.cn-beijing.aliyuncs.com/livenowhy/node:20.16.0-bookworm-vue
+    container_name: front
+    networks: 
+      - macnetworks
+    restart: always
+    depends_on:
+      - mysql8
+      - agentops
+      - redis
+    ports:
+      - 9001:3000
+    volumes:
+      - /Users/zpliu/Desktop/share/front:/share/front
+
+  redis:
+    image: registry.cn-beijing.aliyuncs.com/livenowhy/redis:6.0.base
+    container_name: redis
+    networks: 
+      - macnetworks
+    restart: always
+    ports:
+      - 6379:6379
+
+networks:
+  macnetworks:
+    driver: bridge
+
+# ln -s /share/modules/node_modules   /share/front/node_modules
+# ln -s /share/modules/pnpm-lock.yaml /share/front/pnpm-lock.yaml
+# docker-compose stop && docker-compose rm -f

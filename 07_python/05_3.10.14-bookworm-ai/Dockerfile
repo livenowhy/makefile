@@ -11,7 +11,6 @@ RUN curl -fsSL https://ollama.com/install.sh | sh
 RUN pip install --no-cache-dir langchain-community
 
 
-
 # 2. 代码补全
 RUN pip install --no-cache-dir jupyterlab
 RUN pip install --no-cache-dir jupyterlab-lsp
@@ -21,13 +20,15 @@ RUN pip install --no-cache-dir "python-lsp-server[all]"
 RUN pip install --no-cache-dir apache-superset==4.0.0
 RUN pip install --no-cache-dir vanna==0.5.5
 
-# # superset 预测插件
+# 4. superset 预测插件
 RUN pip install --no-cache-dir prophet
+
+# 5. pycaret
 RUN pip install --no-cache-dir yapf
-#pycaret[full]
-#keras
-#keras-bert
-#tensorflow
-#hyperopt
+RUN pip install --no-cache-dir pycaret[full]
+RUN pip install --no-cache-dir keras
+RUN pip install --no-cache-dir keras-bert
+RUN pip install --no-cache-dir tensorflow
+RUN pip install --no-cache-dir hyperopt
 
 # docker save -o python_crewai.tar registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-django-crewai

@@ -36,13 +36,6 @@ RUN echo "PubkeyAuthentication yes" >> /etc/ssh/sshd_config
 RUN echo "AuthorizedKeysFile .ssh/authorized_keys" >> /etc/ssh/sshd_config
 RUN echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
 
-# docker_compose 挂载进去
-# ADD id_rsa          /root/.ssh/id_rsa
-# ADD id_rsa.pub      /root/.ssh/id_rsa.pub
-# ADD authorized_keys /root/.ssh/authorized_keys
-# 公钥
-# service ssh restart 启用 ssh
-
 # 4. EXPOSE 暴露端口
 EXPOSE 22 80
 EXPOSE 8888 8080 

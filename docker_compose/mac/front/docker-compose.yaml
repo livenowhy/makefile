@@ -32,12 +32,12 @@ services:
       - 8006:8006
       - 8007:8007
       - 8008:8008
-      - 8022:22
+      # - 8022:22
     # 自定义 hosts 配置
     depends_on:
       - mysql8
     volumes:
-      - /Users/zpliu/Desktop/share/phoenix/aihf/aihf.ini:/etc/supervisord.d/aihf.ini
+      - /Users/zpliu/Desktop/share/phoenix/deploy/aihf/aihf.ini:/etc/supervisord.d/aihf.ini
       - /Users/zpliu/Desktop/share/plib:/share/plib
       - /Users/zpliu/Desktop/share/phoenix/aihf:/share/aihf
       - /Users/zpliu/Desktop/share/makefile/docker_compose/mac/front/id_rsa:/root/.ssh/id_rsa
@@ -58,6 +58,7 @@ services:
       - 9001:3000
     volumes:
       - /Users/zpliu/Desktop/share/phoenix/front:/share/front
+      - /Users/zpliu/Desktop/share/phoenix/deploy/front/run-server.sh:/share/run-server.sh
 
   redis:
     image: registry.cn-beijing.aliyuncs.com/livenowhy/redis:6.0.base
@@ -72,6 +73,5 @@ networks:
   macnetworks:
     driver: bridge
 
-    # ln -s /share/modules/node_modules   /share/front/node_modules
-# ln -s /share/modules/pnpm-lock.yaml /share/front/pnpm-lock.yaml
+
 # docker-compose stop && docker-compose rm -f

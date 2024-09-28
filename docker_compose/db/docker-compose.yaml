@@ -48,14 +48,14 @@ services:
       - /bigdata/mysql8:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: "Qp9tb869zXu4kh7Gm9R"
-      
-  adminer:
-    image: registry.cn-beijing.aliyuncs.com/livenowhy/adminer:4.8.1-standalone
-    container_name: adminer
-    network_mode: "bridge"
-    restart: always
-    ports:
-      - 8080:8080
+
+#  adminer:
+#    image: registry.cn-beijing.aliyuncs.com/livenowhy/adminer:4.8.1-standalone
+#    container_name: adminer
+#    network_mode: "bridge"
+#    restart: always
+#    ports:
+#      - 8080:8080
 
   mongo:
     image: registry.cn-beijing.aliyuncs.com/livenowhy/mongo:6.0.1

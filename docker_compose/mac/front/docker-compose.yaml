@@ -15,7 +15,7 @@ services:
       MYSQL_ROOT_PASSWORD: "Qp9tb869zXu4kh7Gm9R"
 
   aihf:
-    image: registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-django-crewai
+    image: registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-debug
     container_name: aihf
     networks:
       - macnetworks

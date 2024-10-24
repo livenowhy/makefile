@@ -4,6 +4,7 @@ TAG = 3.10.14-bookworm-debug
 PREFIX = registry.cn-beijing.aliyuncs.com
 IMAGE_NAME = livenowhy/python
 STATUS = 已构建   # 状态: 已自动构建, 未构建
+SAVE_NAME = python-3.10.14-bookworm-debug
 
 CONTAINER_NAME = superset
 
@@ -32,3 +33,7 @@ gitpush:
 	git add .
 	git commit -m "..."
 	git push origin superset
+
+
+save:
+	docker save -o ${SAVE_NAME}.tar ${PREFIX}/${IMAGE_NAME}:${TAG}

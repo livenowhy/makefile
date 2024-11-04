@@ -7,17 +7,11 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Asia/Shanghai
-      # - DOCKER_MODS=linuxserver/mods:universal-calibre
-      # - OAUTHLIB_RELAX_TOKEN_SCOPE=1
-    volumes:
-      - /bigdata/calibre/config:/config
-      - /bigdata/calibre/books:/books
+      - DOCKER_MODS=linuxserver/mods:universal-calibre #optional
+      - OAUTHLIB_RELAX_TOKEN_SCOPE=1 #optional
+    # volumes:
+    #   - /bigdata/calibre/config:/config
+    #   - /bigdata/calibre/books:/books
     ports:
       - 8083:8083
     restart: unless-stopped
-
-# mkdir -p /bigdata/calibre/config
-# chmod -R a+wr /bigdata/calibre/config
-
-# mkdir -p /bigdata/calibre/books
-# chmod -R a+wr /bigdata/calibre/books

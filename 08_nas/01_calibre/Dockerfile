@@ -1,5 +1,2 @@
-FROM linuxserver/calibre-web
+FROM linuxserver/calibre-web:0.6.23
 LABEL description="官方 linuxserver/calibre-web"
-
-# ADD gdrive.db /app/calibre-web/gdrive.db
-ADD fake_useragent_0.1.11.json /tmp/fake_useragent_0.1.11.json

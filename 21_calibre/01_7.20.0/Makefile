@@ -1,8 +1,8 @@
 all: push
 
-TAG = 0.6.23
+TAG = 7.20.0
 PREFIX = registry.cn-beijing.aliyuncs.com
-IMAGE_NAME = livenowhy/calibre-web
+IMAGE_NAME = livenowhy/calibre
 
 container:
 	docker build -t ${PREFIX}/${IMAGE_NAME}:${TAG} .

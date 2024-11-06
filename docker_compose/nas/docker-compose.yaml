@@ -1,7 +1,7 @@
 version: '3.3'
 services:
-  mongo:
-    image: registry.cn-beijing.aliyuncs.com/livenowhy/calibre-web:latest
+  calibre:
+    image: registry.cn-beijing.aliyuncs.com/livenowhy/calibre:0.6.23
     container_name: calibre-web
     environment:
       - PUID=1000
@@ -9,6 +9,8 @@ services:
       - TZ=Asia/Shanghai
       - DOCKER_MODS=linuxserver/mods:universal-calibre #optional
       - OAUTHLIB_RELAX_TOKEN_SCOPE=1 #optional
+      - PASSWORD='admin'
+      # - CLI_ARGS= #optional
     # volumes:
     #   - /bigdata/calibre/config:/config
     #   - /bigdata/calibre/books:/books

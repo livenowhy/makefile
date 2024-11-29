@@ -34,4 +34,3 @@ RUN pip install --no-cache-dir 'shillelagh[all]'
 ADD jupyter_lab_config.py      /root/.jupyter/jupyter_lab_config.py
 
 # docker save -o python_crewai.tar registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-django-crewai
-# sudo docker save -o python_basepip.tar registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-basepip

@@ -10,4 +10,4 @@ RUN pip install --no-cache-dir django-redis==5.2.0
 RUN pip install --no-cache-dir django-cors-headers==4.6.0
 
 # registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-debug
-# docker save -o python_ai.tar registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-ai
+# docker save -o python_debug.tar registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-debug

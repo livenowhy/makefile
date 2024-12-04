@@ -26,13 +26,10 @@ RUN pip install --no-cache-dir bs4==0.0.2
 RUN pip install --no-cache-dir pytest==8.3.2
 RUN pip install --no-cache-dir flower
 RUN pip install --no-cache-dir flasgger
-RUN pip install --no-cache-dir flake8
+RUN pip install --no-cache-dir flake==7.1.1
 
 # 2. flask
 RUN pip install --no-cache-dir Flask==2.3.3
 RUN pip install --no-cache-dir Flask-AppBuilder==4.5.0
 RUN pip install --no-cache-dir Flask-Cors==4.0.1
 RUN pip install --no-cache-dir flask-restful-swagger-2
-
-# registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-django
-# pip install -i https://pypi.tuna.tsinghua.edu.cn/simple  jupyterlab-kite

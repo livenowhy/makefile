@@ -10,7 +10,7 @@ RUN pip install --no-cache-dir "python-lsp-server[all]"
 # 2. crewai 配置
 RUN pip install --no-cache-dir crewai==0.51.1
 RUN pip install --no-cache-dir crewai-tools==0.8.3
-RUN pip install --no-cache-dir duckduckgo_search==6.2.11
+RUN pip install --no-cache-dir duckduckgo_search==6.2.12
 RUN pip install --no-cache-dir langchain==0.2.14
 RUN curl -fsSL https://ollama.com/install.sh | sh
 RUN pip install --no-cache-dir langchain-community==0.2.12

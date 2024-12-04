@@ -2,10 +2,6 @@ FROM registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-django
 
 LABEL description="django ai 运行镜像; 基于 3.10.14-bookworm-django"
 
-# 1. 代码补全
-RUN pip install --no-cache-dir jupyterlab==4.2.5
-RUN pip install --no-cache-dir jupyterlab-lsp==5.1.0
-RUN pip install --no-cache-dir "python-lsp-server[all]"
 
 # 2. crewai 配置
 RUN pip install --no-cache-dir crewai==0.51.1
@@ -35,6 +31,4 @@ RUN pip install --no-cache-dir 'shillelagh[all]'
 RUN pip install --no-cache-dir django-redis==5.2.0
 RUN pip install --no-cache-dir django-cors-headers==4.6.0
 
-ADD jupyter_lab_config.py      /root/.jupyter/jupyter_lab_config.py
-
-# docker save -o python_crewai.tar registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-django-crewai
+# docker save -o python_ai.tar registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-ai

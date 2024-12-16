@@ -1,19 +1,17 @@
 version: '3.3'
 services:
-  calibre:
+  minio:
     image: registry.cn-beijing.aliyuncs.com/livenowhy/minio:dev
-    container_name: calibre-web
+    container_name: minio
+    command: server /data --console-address ":9001"
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Asia/Shanghai
-      - DOCKER_MODS=linuxserver/mods:universal-calibre #optional
-      - OAUTHLIB_RELAX_TOKEN_SCOPE=1 #optional
-      - PASSWORD='admin'
-      # - CLI_ARGS= #optional
-    # volumes:
-    #   - /bigdata/calibre/config:/config
-    #   - /bigdata/calibre/books:/books
+      - MINIO_ACCESS_KEY=minio
+      - MINIO_SECRET_KEY=minio123
     ports:
-      - 8083:8083
-    restart: unless-stopped
+      - 9000:9000
+      - 9001:9001
+    # healthcheck:
+    #   test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+    #   interval: 30s
+    #   timeout: 20s
+    #   retries: 3

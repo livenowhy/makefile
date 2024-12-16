@@ -1,0 +1,19 @@
+version: '3.3'
+services:
+  calibre:
+    image: registry.cn-beijing.aliyuncs.com/livenowhy/minio:dev
+    container_name: calibre-web
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai
+      - DOCKER_MODS=linuxserver/mods:universal-calibre #optional
+      - OAUTHLIB_RELAX_TOKEN_SCOPE=1 #optional
+      - PASSWORD='admin'
+      # - CLI_ARGS= #optional
+    # volumes:
+    #   - /bigdata/calibre/config:/config
+    #   - /bigdata/calibre/books:/books
+    ports:
+      - 8083:8083
+    restart: unless-stopped

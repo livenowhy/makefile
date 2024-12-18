@@ -15,3 +15,21 @@ services:
     #   interval: 30s
     #   timeout: 20s
     #   retries: 3
+
+
+# 1. 创建访问密钥文件
+# #命令格式：echo [IAM用户访问密钥ID]:[ IAM用户访问密钥] >[密钥文件名]
+# echo "minio:minio123" > /data/s3fs/.passwd-s3fs
+# 设置密钥智能被当前用户访问
+# chmod 600 /data/s3fs/.passwd-s3fs
+
+
+# 2. 挂载minio存储
+# 需要加上 use_path_request_style 进行兼容
+# s3fs prodfile-bucket /data/s3fs/s3mnt -o passwd_file=/data/s3fs/.passwd-s3fs -o url=http://127.0.0.1:9001  -o use_path_request_style
+
+# # s3fs prodfile-bucket /Users/zpliu/Desktop/bigdata -o passwd_file=/Users/zpliu/.passwd-s3fs -o url=http://127.0.0.1:9001  -o use_path_request_style
+
+# # 可以使用 -o dbglevel=info -f  进行输出调试信息
+# s3fs prodfile-bucket /data/s3fs/s3mnt -o passwd_file=/data/s3fs/.passwd-s3fs -o url=http://www.mydomain.com:9001  -o use_path_request_style -o dbglevel=info -f
+

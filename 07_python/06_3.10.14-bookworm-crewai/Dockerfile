@@ -10,9 +10,4 @@ RUN pip install --no-cache-dir langchain==0.2.14
 RUN pip install --no-cache-dir langchain-community==0.2.12
 RUN pip install --no-cache-dir ollama==0.4.1
 
-# 2. other
-RUN pip install --no-cache-dir django-redis==5.2.0
-RUN pip install --no-cache-dir django-cors-headers==4.6.0
-RUN pip install --no-cache-dir django-minio-backend==3.7.2
-
 # registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-crewai

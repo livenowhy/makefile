@@ -8,6 +8,9 @@ RUN curl -fsSL https://ollama.com/install.sh | sh
 # 2. other
 RUN pip install --no-cache-dir django-redis==5.2.0
 RUN pip install --no-cache-dir django-cors-headers==4.6.0
+RUN pip install --no-cache-dir django-minio-backend==3.7.2
 
 # registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-debug
-# docker save -o python_debug.tar registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-debug
+
+# registry.cn-beijing.aliyuncs.com/livenowhy/minio:dev
+# docker save -o minio_dev.tar registry.cn-beijing.aliyuncs.com/livenowhy/minio:dev

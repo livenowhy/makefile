@@ -1,8 +1,8 @@
 all: push
 
-TAG = 3.10.14-bookworm-ollama
+TAG = base
 PREFIX = registry.cn-beijing.aliyuncs.com
-IMAGE_NAME = livenowhy/python
+IMAGE_NAME = livenowhy/ollama
 STATUS = 已构建   # 状态: 已自动构建, 未构建
 
 CONTAINER_NAME = superset

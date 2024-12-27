@@ -7,9 +7,7 @@ RUN pip install --no-cache-dir django-redis==5.2.0
 RUN pip install --no-cache-dir django-cors-headers==4.6.0
 RUN pip install --no-cache-dir django-minio-backend==3.7.2
 
-
 RUN apt-get autoremove -y --purge build-essential
 RUN rm -rf /var/lib/apt/lists/*
 
-
-# docker save -o ai_debug.tar.gz registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-debug
+# docker save -o ai_debug.tar registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-debug

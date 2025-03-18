@@ -32,6 +32,8 @@ services:
       - 8006:8006
       - 8007:8007
       - 8008:8008
+      - 9000:9000
+      - 9001:9001
       # - 8022:22
     # 自定义 hosts 配置
     depends_on:
@@ -44,21 +46,21 @@ services:
       - /Users/zpliu/Desktop/share/makefile/docker_compose/mac/front/id_rsa.pub:/root/.ssh/id_rsa.pub
       - /Users/zpliu/Desktop/share/makefile/docker_compose/mac/front/authorized_keys:/root/.ssh/authorized_keys
 
-  front:
-    image: registry.cn-beijing.aliyuncs.com/livenowhy/node:20.16.0-bookworm-vue
-    container_name: front
-    networks: 
-      - macnetworks
-    restart: always
-    depends_on:
-      - mysql8
-      - aihf
-      - redis
-    ports:
-      - 9001:3000
-    volumes:
-      - /Users/zpliu/Desktop/share/phoenix/front:/share/front
-      - /Users/zpliu/Desktop/share/phoenix/deploy/front/run-server.sh:/share/run-server.sh
+  # front:
+  #   image: registry.cn-beijing.aliyuncs.com/livenowhy/node:20.16.0-bookworm-vue
+  #   container_name: front
+  #   networks: 
+  #     - macnetworks
+  #   restart: always
+  #   depends_on:
+  #     - mysql8
+  #     - aihf
+  #     - redis
+  #   ports:
+  #     - 9001:3000
+  #   volumes:
+  #     - /Users/zpliu/Desktop/share/phoenix/front:/share/front
+  #     - /Users/zpliu/Desktop/share/phoenix/deploy/front/run-server.sh:/share/run-server.sh
 
   redis:
     image: registry.cn-beijing.aliyuncs.com/livenowhy/redis:6.0.base

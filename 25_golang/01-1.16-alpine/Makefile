@@ -13,3 +13,7 @@ push: container
 
 clean:
 	docker rmi -f $(PREFIX):$(TAG) || true
+
+
+# /25_golang/01-1.16-alpine/
+# makefile

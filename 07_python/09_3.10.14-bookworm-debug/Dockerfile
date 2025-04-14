@@ -19,7 +19,5 @@ RUN apt-get autoremove -y --purge build-essential
 RUN rm -rf /var/lib/apt/lists/*
 
 
-
-
 # docker save -o ai_pycaret.tar registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-pycaret
 # docker save -o ai_debug.tar registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-debug

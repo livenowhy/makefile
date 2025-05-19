@@ -90,3 +90,14 @@ networks:
     name: milvus
 
 # https://www.miaokee.com/2555968.html
+# docker pull registry.cn-beijing.aliyuncs.com/oopen/etcd:v3.5.18
+# docker save -o etcd.tar registry.cn-beijing.aliyuncs.com/oopen/etcd:v3.5.18
+
+# docker pull registry.cn-beijing.aliyuncs.com/oopen/milvus:v2.5.9
+# docker save -o milvus.tar registry.cn-beijing.aliyuncs.com/oopen/milvus:v2.5.9
+
+# docker pull registry.cn-beijing.aliyuncs.com/oopen/attu:v2.5.6
+# docker save -o attu.tar registry.cn-beijing.aliyuncs.com/oopen/attu:v2.5.6
+
+# docker pull registry.cn-beijing.aliyuncs.com/oopen/python:3.10.14-bookworm-debug
+# docker save -o ai_debug.tar registry.cn-beijing.aliyuncs.com/oopen/python:3.10.14-bookworm-debug

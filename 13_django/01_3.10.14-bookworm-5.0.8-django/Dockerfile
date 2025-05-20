@@ -2,7 +2,7 @@ FROM registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-codeserv
 
 LABEL description="django 运行镜像; 基于 python:3.10.14-bookworm-codeserver"
 
-# 1. django 普通配置
+# 1. django
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir django==5.2.1
 RUN pip install --no-cache-dir djangorestframework==3.16.0
@@ -39,3 +39,9 @@ RUN pip install --no-cache-dir Flask==3.1.1
 RUN pip install --no-cache-dir Flask-AppBuilder
 RUN pip install --no-cache-dir Flask-Cors
 RUN pip install --no-cache-dir flask-restful-swagger-2
+
+
+# 3. superset; prophet -> superset 预测插件
+RUN pip install --no-cache-dir apache-superset==4.0.0
+RUN pip install --no-cache-dir vanna==0.5.5
+RUN pip install --no-cache-dir prophet==1.1.5

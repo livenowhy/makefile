@@ -15,7 +15,8 @@ services:
       MYSQL_ROOT_PASSWORD: "Qp9tb869zXu4kh7Gm9R"
 
   aihf:
-    image: registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-debug
+    # image: registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-debug
+    image: registry.cn-beijing.aliyuncs.com/livenowhy/django:3.10.14-bookworm-5.0.8-django
     container_name: aihf
     networks:
       - macnetworks
@@ -44,20 +45,20 @@ services:
       - /Users/zpliu/Desktop/share/makefile/docker_compose/mac/front/id_rsa.pub:/root/.ssh/id_rsa.pub
       - /Users/zpliu/Desktop/share/makefile/docker_compose/mac/front/authorized_keys:/root/.ssh/authorized_keys
 
-  # minio:
-  #   image: registry.cn-beijing.aliyuncs.com/livenowhy/minio:apache
-  #   container_name: minio
-  #   networks:
-  #     - macnetworks
-  #   restart: always
-  #   ports:
-  #     - 9000:9000
-  #     - 9001:9001
-  #   environment:
-  #     MINIO_ROOT_USER: "admin"
-  #     MINIO_ROOT_PASSWORD: "admin123"
-    # volumes:
-    #   - /Users/zpliu/Desktop/share/phoenix/deploy/aihf/aihf.ini:/etc/supervisord.d/aihf.ini
+  minio:
+    image: registry.cn-beijing.aliyuncs.com/livenowhy/minio:apache
+    container_name: minio
+    networks:
+      - macnetworks
+    restart: always
+    ports:
+      - 9000:9000
+      - 9001:9001
+    environment:
+      MINIO_ROOT_USER: "admin"
+      MINIO_ROOT_PASSWORD: "admin123"
+    volumes:
+      - /Users/zpliu/Desktop/share/phoenix/deploy/aihf/aihf.ini:/etc/supervisord.d/aihf.ini
 
   # front:
   #   image: registry.cn-beijing.aliyuncs.com/livenowhy/node:20.16.0-bookworm-vue

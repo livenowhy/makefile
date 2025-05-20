@@ -4,7 +4,7 @@ LABEL description="django 运行镜像; 基于 python:3.10.14-bookworm-codeserve
 
 # 1. django 普通配置
 RUN pip install --upgrade pip
-RUN pip install --no-cache-dir django==5.0.8
+RUN pip install --no-cache-dir django==5.2.1
 RUN pip install --no-cache-dir djangorestframework
 RUN pip install --no-cache-dir django-redis
 RUN pip install --no-cache-dir django-cors-headers
@@ -32,6 +32,8 @@ RUN pip install --no-cache-dir flower
 RUN pip install --no-cache-dir flasgger
 RUN pip install --no-cache-dir jieba
 RUN pip install --no-cache-dir flake8
+RUN pip install --no-cache-dir pyjwt
+
 
 # RUN pip install --no-cache-dir pandas==2.1.4
 # RUN pip install --no-cache-dir celery==5.4.0

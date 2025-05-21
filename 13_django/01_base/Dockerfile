@@ -35,15 +35,3 @@ RUN pip install --no-cache-dir flake8==7.2.0
 RUN pip install --no-cache-dir pyjwt==2.10.1
 RUN pip install --no-cache-dir drf-spectacular==0.28.0
 RUN pip install --no-cache-dir pymilvus==2.5.9
-
-# 2. flask
-# superset 要求 Flask 版本
-RUN pip install --no-cache-dir Flask==2.3.3
-RUN pip install --no-cache-dir Flask-AppBuilder==4.6.4
-RUN pip install --no-cache-dir Flask-Cors==6.0.0
-RUN pip install --no-cache-dir flask-restful-swagger-2==0.35
-
-# 3. superset; prophet -> superset 预测插件
-RUN pip install --no-cache-dir apache-superset==4.1.2
-RUN pip install --no-cache-dir vanna==0.7.9
-RUN pip install --no-cache-dir prophet==1.1.6

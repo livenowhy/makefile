@@ -9,7 +9,6 @@ RUN pip install --no-cache-dir duckduckgo_search
 RUN pip install --no-cache-dir langchain
 RUN pip install --no-cache-dir langchain-community
 RUN pip install --no-cache-dir ollama
-RUN pip install --no-cache-dir pymilvus
 
 # # 1. crewai 配置
 # RUN pip install --no-cache-dir crewai==0.51.1

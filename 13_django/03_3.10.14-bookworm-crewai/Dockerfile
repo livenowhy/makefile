@@ -1,6 +1,4 @@
-FROM registry.cn-beijing.aliyuncs.com/livenowhy/django:3.10.14-bookworm-jupyterlab
-
-LABEL description="django crewai 运行镜像; 基于 3.10.14-bookworm-jupyterlab"
+FROM registry.cn-beijing.aliyuncs.com/livenowhy/django:jupyterlab
 
 # 1. crewai 配置
 RUN pip install --no-cache-dir crewai
@@ -18,6 +16,8 @@ RUN pip install --no-cache-dir ollama
 # RUN pip install --no-cache-dir langchain-community==0.2.12
 # RUN pip install --no-cache-dir ollama==0.4.1
 # RUN pip install --no-cache-dir pymilvus==2.5.6
+
+# {'FLAKE8==7.2.0', 'SQLALCHEMY==2.0.41', 'REDIS==6.1.0', 'PANDAS==2.2.3'}
 
 # crewai==0.120.1
 

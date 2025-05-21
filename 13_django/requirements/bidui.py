@@ -24,3 +24,5 @@ if __name__ == "__main__":
     print(set(dockerfile_lines) - set(image_lines))
 
     # print(set(dockerfile_lines) - set(image_lines))
+
+# docker run registry.cn-beijing.aliyuncs.com/livenowhy/django:jupyterlab pip freeze > image.txt

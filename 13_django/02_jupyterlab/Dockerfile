@@ -9,9 +9,9 @@ RUN pip install --no-cache-dir "python-lsp-server[all]"
 ADD jupyter_lab_config.py      /root/.jupyter/jupyter_lab_config.py
 
 # 2. superset; prophet -> superset 预测插件
-RUN pip install --no-cache-dir apache-superset==4.1.2
-RUN pip install --no-cache-dir vanna==0.7.9
-RUN pip install --no-cache-dir prophet==1.1.6
+# RUN pip install --no-cache-dir apache-superset==4.1.2
+# RUN pip install --no-cache-dir vanna==0.7.9
+# RUN pip install --no-cache-dir prophet==1.1.6
 
 
 # # 2. flask

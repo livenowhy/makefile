@@ -29,3 +29,6 @@ flake8==7.2.0
 pyjwt==2.10.1
 drf-spectacular==0.28.0
 pymilvus==2.5.9
+jupyterlab==4.4.2
+jupyterlab-lsp==5.1.0
+"python-lsp-server[all]"

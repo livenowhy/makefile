@@ -33,20 +33,17 @@ RUN pip install --no-cache-dir flasgger==0.9.7.1
 RUN pip install --no-cache-dir jieba==0.42.1
 RUN pip install --no-cache-dir flake8==7.2.0
 RUN pip install --no-cache-dir pyjwt==2.10.1
-RUN pip install --no-cache-dir drf-spectacular
+RUN pip install --no-cache-dir drf-spectacular==0.28.0
 
 # 2. flask
-RUN pip install --no-cache-dir Flask==3.1.1
-RUN pip install --no-cache-dir Flask-AppBuilder
-RUN pip install --no-cache-dir Flask-Cors
-RUN pip install --no-cache-dir flask-restful-swagger-2
+# superset 要求 Flask 版本
+RUN pip install --no-cache-dir Flask==2.3.3
+RUN pip install --no-cache-dir Flask-AppBuilder==4.6.4
+RUN pip install --no-cache-dir Flask-Cors==6.0.0
+RUN pip install --no-cache-dir flask-restful-swagger-2==0.35
 
 
 # 3. superset; prophet -> superset 预测插件
-RUN pip install --no-cache-dir apache-superset
-RUN pip install --no-cache-dir vanna
-RUN pip install --no-cache-dir prophet
-
-# RUN pip install --no-cache-dir apache-superset==4.0.0
-# RUN pip install --no-cache-dir vanna==0.5.5
-# RUN pip install --no-cache-dir prophet==1.1.5
+RUN pip install --no-cache-dir apache-superset==4.1.2
+RUN pip install --no-cache-dir vanna==0.7.9
+RUN pip install --no-cache-dir prophet==1.1.6

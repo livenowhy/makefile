@@ -11,7 +11,3 @@ RUN pip install --no-cache-dir keras-bert==0.89.0
 RUN pip install --no-cache-dir tensorflow==2.17.0
 RUN pip install --no-cache-dir hyperopt==0.2.7
 RUN pip install --no-cache-dir 'shillelagh[all]'
-
-# registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-pycaret
-
-# docker tag registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-pycaret registry.cn-beijing.aliyuncs.com/oopen/python:3.10.14-bookworm-pycaret

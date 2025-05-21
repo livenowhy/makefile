@@ -38,3 +38,9 @@ duckduckgo_search==8.0.2
 langchain==0.3.25
 langchain-community==0.3.24
 ollama==0.4.8
+pycaret==3.3.2
+yapf==0.43.0
+keras==3.10.0
+keras-bert==0.89.0
+tensorflow==2.19.0
+hyperopt==0.2.7

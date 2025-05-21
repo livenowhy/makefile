@@ -32,3 +32,9 @@ pymilvus==2.5.9
 jupyterlab==4.4.2
 jupyterlab-lsp==5.1.0
 python-lsp-server==1.12.2
+crewai==0.120.1
+crewai-tools==0.45.0
+duckduckgo_search==8.0.2
+langchain==0.3.25
+langchain-community==0.3.24
+ollama==0.4.8

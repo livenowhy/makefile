@@ -12,8 +12,6 @@ ADD fetch_model.py /share/fetch_model.py
 # 2. 下载模型 'sentence-transformers/paraphrase-multilingual-mpnet-base-v2'
 RUN python /share/fetch_model.py sentence-transformers/paraphrase-multilingual-mpnet-base-v2
 
-RUN pip install pymilvus==2.5.6
-
 RUN apt-get autoremove -y --purge build-essential
 RUN rm -rf /var/lib/apt/lists/*
 

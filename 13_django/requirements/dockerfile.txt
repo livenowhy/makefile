@@ -28,6 +28,7 @@ jieba==0.42.1
 flake8==7.2.0
 pyjwt==2.10.1
 drf-spectacular==0.28.0
+pymilvus==2.5.9
 Flask==2.3.3
 Flask-AppBuilder==4.6.4
 Flask-Cors==6.0.0

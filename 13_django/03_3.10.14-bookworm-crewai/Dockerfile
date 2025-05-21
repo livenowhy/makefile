@@ -19,3 +19,17 @@ RUN pip install --no-cache-dir pymilvus
 # RUN pip install --no-cache-dir langchain-community==0.2.12
 # RUN pip install --no-cache-dir ollama==0.4.1
 # RUN pip install --no-cache-dir pymilvus==2.5.6
+
+# crewai==0.120.1
+
+# crewai-tools==0.45.0
+
+# duckduckgo_search==8.0.2
+
+# langchain==0.3.25
+# langchain-cohere==0.3.5
+# langchain-community==0.3.24
+# langchain-core==0.3.60
+# langchain-experimental==0.3.4
+# langchain-openai==0.2.14
+# langchain-text-splitters==0.3.8

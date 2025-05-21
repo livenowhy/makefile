@@ -16,7 +16,7 @@ services:
 
   aihf:
     # image: registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-debug
-    image: registry.cn-beijing.aliyuncs.com/livenowhy/django:3.10.14-bookworm-5.0.8-django
+    image: registry.cn-beijing.aliyuncs.com/livenowhy/django:3.10.14-bookworm-pycaret
     container_name: aihf
     networks:
       - macnetworks
@@ -41,6 +41,7 @@ services:
       - /Users/zpliu/Desktop/share/phoenix/deploy/aihf/aihf.ini:/etc/supervisord.d/aihf.ini
       - /Users/zpliu/Desktop/share/plib:/share/plib
       - /Users/zpliu/Desktop/share/phoenix/aihf:/share/aihf
+      # - /Users/zpliu/Desktop/share/makefile:/share/makefile
       - /Users/zpliu/Desktop/share/makefile/docker_compose/mac/front/id_rsa:/root/.ssh/id_rsa
       - /Users/zpliu/Desktop/share/makefile/docker_compose/mac/front/id_rsa.pub:/root/.ssh/id_rsa.pub
       - /Users/zpliu/Desktop/share/makefile/docker_compose/mac/front/authorized_keys:/root/.ssh/authorized_keys

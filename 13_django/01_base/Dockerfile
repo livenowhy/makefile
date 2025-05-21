@@ -34,6 +34,7 @@ RUN pip install --no-cache-dir jieba==0.42.1
 RUN pip install --no-cache-dir flake8==7.2.0
 RUN pip install --no-cache-dir pyjwt==2.10.1
 RUN pip install --no-cache-dir drf-spectacular==0.28.0
+RUN pip install --no-cache-dir pymilvus==2.5.9
 
 # 2. flask
 # superset 要求 Flask 版本

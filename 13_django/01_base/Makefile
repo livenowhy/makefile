@@ -1,6 +1,6 @@
 all: push
 
-TAG = 3.10.14-bookworm-5.0.8-django
+TAG = base
 PREFIX = registry.cn-beijing.aliyuncs.com
 IMAGE_NAME = livenowhy/django
 STATUS = 已构建   # 状态: 已自动构建, 未构建

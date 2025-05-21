@@ -19,12 +19,3 @@ RUN rm -rf /var/lib/apt/lists/*
 # RUN pip install --no-cache-dir apache-superset==4.1.2
 # RUN pip install --no-cache-dir vanna==0.7.9
 # RUN pip install --no-cache-dir prophet==1.1.6
-
-
-# # 2. flask
-# # superset 要求 Flask 版本
-# RUN pip install --no-cache-dir Flask==2.3.3
-# RUN pip install --no-cache-dir Flask-AppBuilder==4.6.4
-# RUN pip install --no-cache-dir Flask-Cors==6.0.0
-# RUN pip install --no-cache-dir flask-restful-swagger-2==0.35
-

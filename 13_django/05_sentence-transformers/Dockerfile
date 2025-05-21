@@ -1,8 +1,7 @@
-FROM registry.cn-beijing.aliyuncs.com/livenowhy/django:3.10.14-bookworm-pycaret
+FROM registry.cn-beijing.aliyuncs.com/livenowhy/django:pycaret
 
-LABEL description="django pycaret 运行镜像; 基于 3.10.14-bookworm-crewai"
 
-# 1. other
+# 1. sentence-transformers
 RUN pip install --no-cache-dir sentence-transformers==4.0.2
 RUN pip install --no-cache-dir chardet==5.0.0
 RUN pip install --no-cache-dir tf-keras==2.19.0

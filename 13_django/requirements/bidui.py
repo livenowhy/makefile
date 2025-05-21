@@ -23,5 +23,5 @@ if __name__ == "__main__":
     
     print(set(dockerfile_lines) - set(image_lines))
 
-    print(set(image_lines) - set(dockerfile_lines))
+    # print(set(image_lines) - set(dockerfile_lines))
 # docker run registry.cn-beijing.aliyuncs.com/livenowhy/django:crewai pip freeze > image.txt

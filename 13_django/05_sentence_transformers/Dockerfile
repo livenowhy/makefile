@@ -20,9 +20,3 @@ RUN python /share/fetch_model.py sentence-transformers/paraphrase-multilingual-m
 
 RUN apt-get autoremove -y --purge build-essential
 RUN rm -rf /var/lib/apt/lists/*
-
-
-# ###
-# RUN pip install --no-cache-dir django-redis==5.2.0
-# RUN pip install --no-cache-dir django-cors-headers==4.6.0
-# RUN pip install --no-cache-dir django-minio-backend==3.7.2

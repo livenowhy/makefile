@@ -26,3 +26,5 @@ gitpush:
 	git add .
 	git commit -m "..."
 	git push origin superset
+
+# # docker save -o ai_debug.tar registry.cn-beijing.aliyuncs.com/oopen/django:debug

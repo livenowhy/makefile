@@ -16,7 +16,7 @@ services:
 
   aihf:
     # image: registry.cn-beijing.aliyuncs.com/livenowhy/python:3.10.14-bookworm-debug
-    image: registry.cn-beijing.aliyuncs.com/livenowhy/django:3.10.14-bookworm-pycaret
+    image: registry.cn-beijing.aliyuncs.com/oopen/django:debug
     container_name: aihf
     networks:
       - macnetworks

@@ -12,8 +12,8 @@ RUN pip install --no-cache-dir huggingface_hub[hf_xet]
 ENV HF_ENDPOINT=https://hf-mirror.com
 ADD fetch_model.py /share/fetch_model.py
 
-# 2. 下载模型 'sentence-transformers/paraphrase-multilingual-mpnet-base-v2'
-RUN huggingface-cli download --resume-download sentence-transformers/paraphrase-multilingual-mpnet-base-v2
+# # 2. 下载模型 'sentence-transformers/paraphrase-multilingual-mpnet-base-v2'
+# RUN huggingface-cli download --resume-download sentence-transformers/paraphrase-multilingual-mpnet-base-v2
 
 # 3. 验证模型是否下载完成; 是否可用
 RUN python /share/fetch_model.py sentence-transformers/paraphrase-multilingual-mpnet-base-v2

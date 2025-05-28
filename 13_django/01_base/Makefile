@@ -32,3 +32,5 @@ gitpush:
 	git add .
 	git commit -m "..."
 	git push origin superset
+
+# docker save -o django_base.tar registry.cn-beijing.aliyuncs.com/livenowhy/django:base

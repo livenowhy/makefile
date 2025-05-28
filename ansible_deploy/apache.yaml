@@ -1,0 +1,27 @@
+---
+- name: apache yum apply
+  gather_facts: false
+  hosts: webservers
+  remote_user: root
+  tasks:
+   - name: test connection
+     ping:
+  
+  #  - name: stop firewalld
+  #    service: name=firewalld state=stopped
+  
+  #  - name: stop selinux
+  #    command: '/usr/sbin/setenforce 0'
+  #    ignore_errors: true
+  
+  #  - name: yum install apache service
+  #    yum: name=httpd state=latest
+  
+  #  - name: start apache service
+  #    service: name=httpd state=started enabled=yes
+
+# ansible-playbook apache.yaml
+# ansible-playbook apache.yaml --syntax-check    #检查yaml文件的语法是否正确
+# ansible-playbook apache.yaml --list-task       #检查tasks任务
+# ansible-playbook apache.yaml --list-hosts      #检查生效的主机
+# ansible-playbook apache.yaml --start-at-task='install httpd'     #指定从某个task开始运行

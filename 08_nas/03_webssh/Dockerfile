@@ -1,0 +1,1 @@
+FROM oldiy/docker-webssh2

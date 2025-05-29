@@ -6,3 +6,5 @@ RUN apt-get install telnet -y
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir ansible
 RUN pip install --no-cache-dir ansible-core
+
+# # docker save -o ansible.tar registry.cn-beijing.aliyuncs.com/livenowhy/python:2.7.18-ansible
